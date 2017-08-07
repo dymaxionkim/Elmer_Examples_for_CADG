@@ -222,6 +222,15 @@ apt -y install texlive-full
 pip install pandoc
 
 
+# GNU Octave
+apt -y install octave liboctave-dev
+chown -hR osboxes:osboxes ~/.config/octave
+
+
+# Locale
+echo 'LANG="ko_KR.UTF-8"' > /etc/default/locale
+
+
 # Elmer
 apt -y install elmerfem-csc
 cp /usr/share/ElmerGUI/edf-extra/*.xml /usr/share/ElmerGUI/edf/
@@ -246,36 +255,16 @@ echo '/usr/bin/ElmerGUI' >> /usr/bin/Start_Elmer.sh
 
 chmod +x /usr/bin/Start_Elmer.sh
 
-sudo echo '[Desktop Entry]' > /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Encoding=UTF-8' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Name=Elmer' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Comment=Elmer FEA software' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Exec=Start_Elmer.sh' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Icon=/usr/share/ElmerGUI/icons/Mesh3D.png' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'StartupNotify=true' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Terminal=false' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Type=Application' >> /usr/share/applications/ElmerGUI.desktop
-sudo echo 'Categories=Education;' >> /usr/share/applications/ElmerGUI.desktop
-
-
-# Paraview
-wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.4&type=binary&os=linux64&downloadFile=ParaView-5.4.1-RC3-Qt5-OpenGL2-MPI-Linux-64bit.tar.gz"
-tar -xvzf Paraview.tar.gz
-rm Paraview.tar.gz
-
-echo '' >> ~/.bashrc
-echo '# Paraview' >> ~/.bashrc
-echo 'export PATH="/home/osboxes/Paraview/bin:$PATH"' >> ~/.bashrc
-
-
-# Salome
-wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=UB16.04&version=8.2.0"
-tar -xvzf Salome.tgz
-rm Salome.tgz
-
-echo '' >> ~/.bashrc
-echo '# Salome' >> ~/.bashrc
-echo 'export PATH="/home/osboxes/Salome:$PATH"' >> ~/.bashrc
+echo '[Desktop Entry]' > /usr/share/applications/ElmerGUI.desktop
+echo 'Encoding=UTF-8' >> /usr/share/applications/ElmerGUI.desktop
+echo 'Name=Elmer' >> /usr/share/applications/ElmerGUI.desktop
+echo 'Comment=Elmer FEA software' >> /usr/share/applications/ElmerGUI.desktop
+echo 'Exec=Start_Elmer.sh' >> /usr/share/applications/ElmerGUI.desktop
+echo 'Icon=/usr/share/ElmerGUI/icons/Mesh3D.png' >> /usr/share/applications/ElmerGUI.desktop
+echo 'StartupNotify=true' >> /usr/share/applications/ElmerGUI.desktop
+echo 'Terminal=false' >> /usr/share/applications/ElmerGUI.desktop
+echo 'Type=Application' >> /usr/share/applications/ElmerGUI.desktop
+echo 'Categories=Education;' >> /usr/share/applications/ElmerGUI.desktop
 
 
 # Gmsh
@@ -288,24 +277,61 @@ echo '' >> ~/.bashrc
 echo '# Gmsh' >> ~/.bashrc
 echo 'export PATH="/home/osboxes/Gmsh/bin:$PATH"' >> ~/.bashrc
 
-sudo echo '[Desktop Entry]' > /usr/share/applications/Gmsh.desktop
-sudo echo 'Encoding=UTF-8' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'Name=Gmsh' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'Comment=Mesh Generator' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'Exec=gmsh' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'Icon=/home/osboxes/Gmsh/share/doc/gmsh/tutorial/image.png' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'StartupNotify=true' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'Terminal=false' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'Type=Application' >> /usr/share/applications/Gmsh.desktop
-sudo echo 'Categories=Education;' >> /usr/share/applications/Gmsh.desktop
-
-# GNU Octave
-apt -y install octave liboctave-dev
-chown -hR osboxes:osboxes ~/.config/octave
+echo '[Desktop Entry]' > /usr/share/applications/Gmsh.desktop
+echo 'Encoding=UTF-8' >> /usr/share/applications/Gmsh.desktop
+echo 'Name=Gmsh' >> /usr/share/applications/Gmsh.desktop
+echo 'Comment=Mesh Generator' >> /usr/share/applications/Gmsh.desktop
+echo 'Exec=gmsh' >> /usr/share/applications/Gmsh.desktop
+echo 'Icon=/home/osboxes/Gmsh/share/doc/gmsh/tutorial/image.png' >> /usr/share/applications/Gmsh.desktop
+echo 'StartupNotify=true' >> /usr/share/applications/Gmsh.desktop
+echo 'Terminal=false' >> /usr/share/applications/Gmsh.desktop
+echo 'Type=Application' >> /usr/share/applications/Gmsh.desktop
+echo 'Categories=Education;' >> /usr/share/applications/Gmsh.desktop
 
 
-# Locale
-echo 'LANG="ko_KR.UTF-8"' > /etc/default/locale
+# Paraview
+wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.4&type=binary&os=linux64&downloadFile=ParaView-5.4.1-RC3-Qt5-OpenGL2-MPI-Linux-64bit.tar.gz"
+tar -xvzf Paraview.tar.gz
+mv ParaView-* Paraview
+rm Paraview.tar.gz
+
+echo '' >> ~/.bashrc
+echo '# Paraview' >> ~/.bashrc
+echo 'export PATH="/home/osboxes/Paraview/bin:$PATH"' >> ~/.bashrc
+
+echo '[Desktop Entry]' > /usr/share/applications/Paraview.desktop
+echo 'Encoding=UTF-8' >> /usr/share/applications/Paraview.desktop
+echo 'Name=Paraview' >> /usr/share/applications/Paraview.desktop
+echo 'Comment=Data Analysis and Visualization' >> /usr/share/applications/Paraview.desktop
+echo 'Exec=paraview' >> /usr/share/applications/Paraview.desktop
+echo 'Icon=/home/dymaxionkim/Paraview/share/icons/hicolor/32x32/apps/paraview.png' >> /usr/share/applications/Paraview.desktop
+echo 'StartupNotify=true' >> /usr/share/applications/Paraview.desktop
+echo 'Terminal=false' >> /usr/share/applications/Paraview.desktop
+echo 'Type=Application' >> /usr/share/applications/Paraview.desktop
+echo 'Categories=Education;' >> /usr/share/applications/Paraview.desktop
+
+
+# Salome
+wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=UB16.04&version=8.2.0"
+tar -xvzf Salome.tgz
+mv SALOME-* Salome
+rm Salome.tgz
+
+echo '' >> ~/.bashrc
+echo '# Salome' >> ~/.bashrc
+echo 'export PATH="/home/osboxes/Salome:$PATH"' >> ~/.bashrc
+
+echo '[Desktop Entry]' > /usr/share/applications/Salome.desktop
+echo 'Encoding=UTF-8' >> /usr/share/applications/Salome.desktop
+echo 'Name=Salome' >> /usr/share/applications/Salome.desktop
+echo 'Comment=Pre/Post Processing' >> /usr/share/applications/Salome.desktop
+echo 'Exec=salome' >> /usr/share/applications/Salome.desktop
+echo 'Icon=/home/dymaxionkim/Salome/BINARIES-UB16.04/SALOME/share/salome/resources/salome_profile/splash.png' >> /usr/share/applications/Salome.desktop
+echo '/home/dymaxionkim/Salome/BINARIES-UB16.04/SMESH/share/doc/salome/gui/SMESH/blocFissure/_images/01_CubeAngle.png' >> /usr/share/applications/Salome.desktop
+echo 'StartupNotify=true' >> /usr/share/applications/Salome.desktop
+echo 'Terminal=false' >> /usr/share/applications/Salome.desktop
+echo 'Type=Application' >> /usr/share/applications/Salome.desktop
+echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
 
 # Fin
