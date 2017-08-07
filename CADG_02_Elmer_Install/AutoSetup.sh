@@ -327,7 +327,7 @@ echo 'Name=Salome' >> /usr/share/applications/Salome.desktop
 echo 'Comment=Pre/Post Processing' >> /usr/share/applications/Salome.desktop
 echo 'Exec=salome' >> /usr/share/applications/Salome.desktop
 echo 'Icon=/home/dymaxionkim/Salome/BINARIES-UB16.04/SALOME/share/salome/resources/salome_profile/splash.png' >> /usr/share/applications/Salome.desktop
-echo '/home/dymaxionkim/Salome/BINARIES-UB16.04/SMESH/share/doc/salome/gui/SMESH/blocFissure/_images/01_CubeAngle.png' >> /usr/share/applications/Salome.desktop
+#echo 'Icon=/home/dymaxionkim/Salome/BINARIES-UB16.04/SMESH/share/doc/salome/gui/SMESH/blocFissure/_images/01_CubeAngle.png' >> /usr/share/applications/Salome.desktop
 echo 'StartupNotify=true' >> /usr/share/applications/Salome.desktop
 echo 'Terminal=false' >> /usr/share/applications/Salome.desktop
 echo 'Type=Application' >> /usr/share/applications/Salome.desktop
