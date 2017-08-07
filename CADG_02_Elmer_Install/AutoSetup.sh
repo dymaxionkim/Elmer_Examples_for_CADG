@@ -281,12 +281,23 @@ echo 'export PATH="/home/osboxes/Salome:$PATH"' >> ~/.bashrc
 # Gmsh
 wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-3.0.4-Linux64.tgz"
 tar -xvzf Gmsh.tgz
+mv gmsh* Gmsh
 rm Gmsh.tgz
 
 echo '' >> ~/.bashrc
 echo '# Gmsh' >> ~/.bashrc
 echo 'export PATH="/home/osboxes/Gmsh/bin:$PATH"' >> ~/.bashrc
 
+sudo echo '[Desktop Entry]' > /usr/share/applications/Gmsh.desktop
+sudo echo 'Encoding=UTF-8' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'Name=Gmsh' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'Comment=Mesh Generator' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'Exec=gmsh' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'Icon=/home/osboxes/Gmsh/share/doc/gmsh/tutorial/image.png' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'StartupNotify=true' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'Terminal=false' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'Type=Application' >> /usr/share/applications/Gmsh.desktop
+sudo echo 'Categories=Education;' >> /usr/share/applications/Gmsh.desktop
 
 # GNU Octave
 apt -y install octave liboctave-dev
