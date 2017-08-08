@@ -334,5 +334,29 @@ echo 'Type=Application' >> /usr/share/applications/Salome.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
 
+
+## Desktop Environment
+
+# lxterminal.conf
+mv /home/osboxes/.config/lxterminal/lxterminal.conf /home/osboxes/.config/lxterminal/lxterminal.conf.bak
+cp ./lxterminal.conf /home/osboxes/.config/lxterminal/lxterminal.conf
+
+# GTK-3.0
+mv /home/osboxes/.config/gtk-3.0/settings.ini /home/osboxes/.config/gtk-3.0/settings.ini.bak
+cp ./settings.ini /home/osboxes/.config/gtk-3.0/settings.ini
+
+# lxsession
+mv /home/osboxes/.config/lxsession/Lubuntu/desktop.conf /home/osboxes/.config/lxsession/Lubuntu/desktop.conf.bak
+cp ./desktop.conf /home/osboxes/.config/lxsession/Lubuntu/desktop.conf
+
+# openbox
+mv /home/osboxes/.config/openbox/lubuntu-rc.xml /home/osboxes/.config/openbox/lubuntu-rc.xml.bak
+cp /lubuntu-rc.xml /home/osboxes/.config/openbox/lubuntu-rc.xml
+
+# pcmanfm
+mv /home/osboxes/.config/pcmanfm/lubuntu/desktop-items-0.conf /home/osboxes/.config/pcmanfm/lubuntu/desktop-items-0.conf.bak
+cp ./desktop-items-0.conf /home/osboxes/.config/pcmanfm/lubuntu/desktop-items-0.conf
+
+
 # Fin
 echo 'Finished!'
