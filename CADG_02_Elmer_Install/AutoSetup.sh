@@ -16,7 +16,7 @@ add-apt-repository -y ppa:jonathonf/ffmpeg-3
 add-apt-repository -y ppa:openshot.developers/ppa
 add-apt-repository -y ppa:webupd8team/atom
 add-apt-repository -y ppa:freecad-maintainers/freecad-stable
-apt-add-repository -y ppa:hodong/testing
+apt-add-repository -y ppa:hodong/nimf
 apt-add-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
 add-apt-repository -y ppa:octave/stable
 
@@ -79,12 +79,13 @@ im-config -n nimf
 
 
 # Python pip
-apt -y install python-pip
+#apt -y install python-pip
+#pip install --upgrade pip
 
 
 # Pandoc
-apt -y install texlive-full
-pip install pandoc
+apt -y install texlive-full pandoc
+#pip install pandoc
 
 
 # GNU Octave
