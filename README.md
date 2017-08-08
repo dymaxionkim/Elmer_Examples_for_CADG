@@ -31,6 +31,9 @@ __Elmer FEM Examples for CAD&Graphics__
 * `Ctrl+Alt+t` 단축키를 눌러 터미널을 열고 다음 명령을 수행한다.
 
 ```bash
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y install git
 mkdir /home/osboxes/github
 cd /home/osboxes/github
 git clone https://github.com/dymaxionkim/Elmer_Examples_for_CADG.git
@@ -46,9 +49,6 @@ chmod +x ./AutoSetup.sh
 sudo sh AutoSetup.sh
 ```
 
-* 이제 다 될 때 까지 한참 기다린다.
-* 운좋게 이상없이 완료되면, 가상머신을 재부팅한다.
-
-
-
-
+* 이제 다 될 때 까지 한참() 기다린다.
+* 이상없이 완료되면, 가상머신을 재부팅한다.
+* 진행 도중 이상이 발견되면, 작성자에게 알려줘서 업데이트 요청을 하거나 또는 스스로 문제를 찾아 해결한다.
