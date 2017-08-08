@@ -6,7 +6,6 @@
 ###########################################################
 
 
-
 # Repositories
 add-apt-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:inkscape.dev/stable
@@ -76,6 +75,12 @@ cp ./drawing.tcl /usr/share/netgen/drawing.tcl
 apt -y install nimf im-config
 im-config -n nimf
 # nimf-settings
+
+
+# Nimf, Evince 충돌문제 해결
+# https://github.com/cogniti/nimf/issues/1
+mv /etc/apparmor.d/usr.bin.evince /etc/apparmor.d/usr.bin.evince.bak
+cp /home/osboxes/github/Elmer_Examples_for_CADG/CADG_02_Elmer_Install/usr.bin.evince /etc/apparmor.d/usr.bin.evince
 
 
 # Python pip
