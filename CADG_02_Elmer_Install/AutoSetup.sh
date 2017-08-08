@@ -50,7 +50,7 @@ apt -y install numix-gtk-theme numix-icon-theme* numix-wallpaper-*
 
 
 # Basic Utilies
-apt -y install inkscape gimp convertall qalculate vlc browser-plugin-vlc libreoffice libreoffice-help-ko expect pluma
+apt -y install inkscape gimp convertall qalculate vlc browser-plugin-vlc libreoffice libreoffice-help-ko expect pluma htop
 
 
 # ffmpeg
@@ -141,7 +141,7 @@ echo '[Desktop Entry]' > /usr/share/applications/Gmsh.desktop
 echo 'Encoding=UTF-8' >> /usr/share/applications/Gmsh.desktop
 echo 'Name=Gmsh' >> /usr/share/applications/Gmsh.desktop
 echo 'Comment=Mesh Generator' >> /usr/share/applications/Gmsh.desktop
-echo 'Exec=gmsh' >> /usr/share/applications/Gmsh.desktop
+echo 'Exec=/home/osboxes/Gmsh/bin/gmsh' >> /usr/share/applications/Gmsh.desktop
 echo 'Icon=/home/osboxes/Gmsh/share/doc/gmsh/tutorial/image.png' >> /usr/share/applications/Gmsh.desktop
 echo 'StartupNotify=true' >> /usr/share/applications/Gmsh.desktop
 echo 'Terminal=false' >> /usr/share/applications/Gmsh.desktop
@@ -163,7 +163,7 @@ echo '[Desktop Entry]' > /usr/share/applications/Paraview.desktop
 echo 'Encoding=UTF-8' >> /usr/share/applications/Paraview.desktop
 echo 'Name=Paraview' >> /usr/share/applications/Paraview.desktop
 echo 'Comment=Data Analysis and Visualization' >> /usr/share/applications/Paraview.desktop
-echo 'Exec=paraview' >> /usr/share/applications/Paraview.desktop
+echo 'Exec=/home/osboxes/Paraview/bin/paraview' >> /usr/share/applications/Paraview.desktop
 echo 'Icon=/home/osboxes/Paraview/share/icons/hicolor/32x32/apps/paraview.png' >> /usr/share/applications/Paraview.desktop
 echo 'StartupNotify=true' >> /usr/share/applications/Paraview.desktop
 echo 'Terminal=false' >> /usr/share/applications/Paraview.desktop
@@ -185,7 +185,7 @@ echo '[Desktop Entry]' > /usr/share/applications/Salome.desktop
 echo 'Encoding=UTF-8' >> /usr/share/applications/Salome.desktop
 echo 'Name=Salome' >> /usr/share/applications/Salome.desktop
 echo 'Comment=Pre/Post Processing' >> /usr/share/applications/Salome.desktop
-echo 'Exec=salome' >> /usr/share/applications/Salome.desktop
+echo 'Exec=/home/osboxes/Salome/salome' >> /usr/share/applications/Salome.desktop
 echo 'Icon=/home/osboxes/Salome/BINARIES-UB16.04/SALOME/share/salome/resources/salome_profile/splash.png' >> /usr/share/applications/Salome.desktop
 #echo 'Icon=/home/osboxes/Salome/BINARIES-UB16.04/SMESH/share/doc/salome/gui/SMESH/blocFissure/_images/01_CubeAngle.png' >> /usr/share/applications/Salome.desktop
 echo 'StartupNotify=true' >> /usr/share/applications/Salome.desktop
