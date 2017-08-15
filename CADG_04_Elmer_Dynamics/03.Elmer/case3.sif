@@ -2,27 +2,25 @@ Header
   CHECK KEYWORDS Warn
   Mesh DB "." "."
   Include Path ""
-  Results Directory "CASE1"
+  Results Directory "CASE3"
 End
 
 Simulation
   Max Output Level = 5
   Coordinate System = Cartesian
   Coordinate Mapping(3) = 1 2 3
-  Simulation Type = Transient
+  Simulation Type = Steady state
   Steady State Max Iterations = 1
   Output Intervals = 1
   Timestepping Method = BDF
   BDF Order = 1
-  Timestep intervals = 100
-  Timestep Sizes = 0.001
-  Solver Input File = case1.sif
-  Post File = case1.vtu
+  Solver Input File = case3.sif
+  Post File = case3.vtu
 Coordinate Scaling = 0.001
 End
 
 Constants
-  Gravity(4) = 0 0 -1 9.82
+  Gravity(4) = 0 -1 0 9.82
   Stefan Boltzmann = 5.67e-08
   Permittivity of Vacuum = 8.8542e-12
   Boltzmann Constant = 1.3807e-23
@@ -35,14 +33,16 @@ Body 1
   Equation = 1
   Material = 1
   Body Force = 1
-  Initial condition = 1
 End
 
 Solver 1
   Equation = Linear elasticity
   Calculate Stresses = True
-  Variable = -dofs 3 Displacement
+  Eigen System Values = 10
+  Eigen System Select = Smallest magnitude
   Procedure = "StressSolve" "StressSolver"
+  Variable = -dofs 3 Displacement
+  Eigen Analysis = True
   Exec Solver = Always
   Stabilize = True
   Bubbles = False
@@ -54,16 +54,8 @@ Solver 1
   Nonlinear System Newton After Iterations = 3
   Nonlinear System Newton After Tolerance = 1.0e-3
   Nonlinear System Relaxation Factor = 1
-  Linear System Solver = Iterative
-  Linear System Iterative Method = BiCGStab
-  Linear System Max Iterations = 500
-  Linear System Convergence Tolerance = 1.0e-5
-  BiCGstabl polynomial degree = 2
-  Linear System Preconditioning = Diagonal
-  Linear System ILUT Tolerance = 1.0e-3
-  Linear System Abort Not Converged = False
-  Linear System Residual Output = 1
-  Linear System Precondition Recompute = 1
+  Linear System Solver = Direct
+  Linear System Direct Method = Umfpack
 End
 
 Equation 1
@@ -74,6 +66,7 @@ End
 
 Material 1
   Name = "Bronze"
+  Damping = 1e7
   Poisson ratio = 0.34
   Youngs modulus = 1.2236595E+10
   Porosity Model = Always saturated
@@ -83,11 +76,6 @@ End
 Body Force 1
   Name = "Gravitation"
   Stress Bodyforce 3 = $(-9.81*8800)
-End
-
-Initial Condition 1
-  Name = "InitialCondition 1"
-  Displacement 1 = -0.005
 End
 
 Boundary Condition 1

@@ -21,7 +21,7 @@
       </widget>
       <widget type="LineEdit">
          <objectName>resultsDirectoryEdit</objectName>
-         <text>CASE1</text>
+         <text>CASE3</text>
       </widget>
       <widget type="LineEdit">
          <objectName>steadyStateMaxIterEdit</objectName>
@@ -33,7 +33,7 @@
       </widget>
       <widget type="LineEdit">
          <objectName>timeStepIntervalsEdit</objectName>
-         <text>1000</text>
+         <text></text>
       </widget>
       <widget type="LineEdit">
          <objectName>outputIntervalsEdit</objectName>
@@ -41,19 +41,19 @@
       </widget>
       <widget type="LineEdit">
          <objectName>timestepSizesEdit</objectName>
-         <text>0.001</text>
+         <text></text>
       </widget>
       <widget type="LineEdit">
          <objectName>solverInputFileEdit</objectName>
-         <text>case1.sif</text>
+         <text>case3.sif</text>
       </widget>
       <widget type="LineEdit">
          <objectName>postFileEdit</objectName>
-         <text>case1.vtu</text>
+         <text>case3.vtu</text>
       </widget>
       <widget type="LineEdit">
          <objectName>gravityEdit</objectName>
-         <text>0 0 -1 9.82</text>
+         <text>0 -1 0 9.82</text>
       </widget>
       <widget type="LineEdit">
          <objectName>boltzmannEdit</objectName>
@@ -101,7 +101,7 @@
       </widget>
       <widget type="ComboBox">
          <objectName>simulationTypeCombo</objectName>
-         <currentIndex>1</currentIndex>
+         <currentIndex>0</currentIndex>
       </widget>
    </generalsetup>
    <parallelsettings>
@@ -173,7 +173,7 @@
       </widget>
    </meshparameters>
    <solverparameters>
-      <item index="10" name="Linear elasticity">
+      <item index="1" name="Linear elasticity">
          <widget type="RadioButton">
             <objectName>execAlways</objectName>
             <isChecked>1</isChecked>
@@ -364,7 +364,7 @@
          </widget>
          <widget type="LineEdit">
             <objectName>linearSystemConvergenceToleranceEdit</objectName>
-            <text>1.0e-5</text>
+            <text>1.0e-10</text>
          </widget>
          <widget type="LineEdit">
             <objectName>linearSystemILUTToleranceEdit</objectName>
@@ -456,16 +456,16 @@
             <key>/Poisson-Boltzmann equation/Equation/Priority/0</key>
             <value></value>
          </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Equation/Equation/Active/0</key>
-            <value>0</value>
-         </widget>
          <widget type="Label">
             <key>/Nonlinear elasticity/Equation/This and that/0</key>
             <value>This and that</value>
          </widget>
          <widget type="CheckBox">
             <key>/Navier-Stokes/Equation/Active/0</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Equation/Equation/Active/0</key>
             <value>0</value>
          </widget>
          <widget type="Label">
@@ -480,10 +480,6 @@
             <key>/Reynolds Equation/Equation/Tangent Velocity 1/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/Reynolds Equation/Equation/Tangent Velocity 3/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/MgDyn/Equation/Free text input/0</key>
             <value>Free text input</value>
@@ -493,16 +489,20 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Mesh Update/Equation/Priority/0</key>
+            <key>/Reynolds Equation/Equation/Tangent Velocity 3/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Reynolds Equation/Equation/Tangent Velocity 2/0</key>
+            <key>/Mesh Update/Equation/Priority/0</key>
             <value></value>
          </widget>
          <widget type="Label">
             <key>/K-Epsilon/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Reynolds Equation/Equation/Tangent Velocity 2/0</key>
+            <value></value>
          </widget>
          <widget type="CheckBox">
             <key>/MgDyn2DPost/Equation/Active/0</key>
@@ -521,24 +521,24 @@
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Vector Helmholtz Equation/Equation/This and that/0</key>
-            <value>This and that</value>
-         </widget>
-         <widget type="Label">
             <key>/Reynolds Equation/Equation/Global velocity settings/0</key>
             <value>Global velocity settings</value>
+         </widget>
+         <widget type="Label">
+            <key>/Vector Helmholtz Equation/Equation/This and that/0</key>
+            <value>This and that</value>
          </widget>
          <widget type="Label">
             <key>/MgDyn2DHarmonic/Equation/Options/0</key>
             <value>Options</value>
          </widget>
-         <widget type="CheckBox">
-            <key>/Advection Diffusion Equation/Equation/Active/0</key>
-            <value>0</value>
-         </widget>
          <widget type="Edit">
             <key>/Result Output/Equation/Priority/0</key>
             <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Advection Diffusion Equation/Equation/Active/0</key>
+            <value>0</value>
          </widget>
          <widget type="Label">
             <key>/SST K-Omega/Equation/Give Execution priority/0</key>
@@ -573,11 +573,11 @@
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Vector Helmholtz Post Process/Equation/Free text input/0</key>
+            <key>/Nonlinear elasticity/Equation/Free text input/0</key>
             <value>Free text input</value>
          </widget>
          <widget type="Label">
-            <key>/Nonlinear elasticity/Equation/Free text input/0</key>
+            <key>/Vector Helmholtz Post Process/Equation/Free text input/0</key>
             <value>Free text input</value>
          </widget>
          <widget type="Label">
@@ -708,13 +708,13 @@
             <key>/Advection Diffusion Equation/Equation/Convection Velocity 2/0</key>
             <value></value>
          </widget>
-         <widget type="Label">
-            <key>/Divergence/Equation/Give Execution priority/0</key>
-            <value>Give Execution priority</value>
-         </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/Equation/Element Codes/0</key>
             <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Divergence/Equation/Give Execution priority/0</key>
+            <value>Give Execution priority</value>
          </widget>
          <widget type="Edit">
             <key>/Richards Equation/Equation/Priority/0</key>
@@ -752,13 +752,13 @@
             <key>/Free Surface/Equation/Convection Field/0</key>
             <value>String Flow Solution</value>
          </widget>
-         <widget type="Label">
-            <key>/MgDyn2DHarmonic/Equation/Activate for this equation set/0</key>
-            <value>Activate for this equation set</value>
-         </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/Equation/Element Codes/0</key>
             <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn2DHarmonic/Equation/Activate for this equation set/0</key>
+            <value>Activate for this equation set</value>
          </widget>
          <widget type="Label">
             <key>/MgDyn/Equation/Activate for this equation set/0</key>
@@ -785,10 +785,6 @@
             <value>Options</value>
          </widget>
          <widget type="Edit">
-            <key>/Vector Helmholtz Equation/Equation/Angular Frequency/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
             <key>/Linear elasticity/Equation/Priority/0</key>
             <value></value>
          </widget>
@@ -796,16 +792,20 @@
             <key>/SaveScalars/Equation/Give Execution priority/0</key>
             <value>Give Execution priority</value>
          </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/Equation/Angular Frequency/0</key>
+            <value></value>
+         </widget>
          <widget type="Label">
             <key>/MgDyn2DPost/Equation/Free text input/0</key>
             <value>Free text input</value>
          </widget>
          <widget type="CheckBox">
-            <key>/Reynolds Equation/Equation/Active/0</key>
+            <key>/Divergence/Equation/Active/0</key>
             <value>0</value>
          </widget>
          <widget type="CheckBox">
-            <key>/Divergence/Equation/Active/0</key>
+            <key>/Reynolds Equation/Equation/Active/0</key>
             <value>0</value>
          </widget>
          <widget type="Label">
@@ -824,13 +824,13 @@
             <key>/Advection Diffusion Equation/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
          </widget>
-         <widget type="Label">
-            <key>/Mesh Update/Equation/Give Execution priority/0</key>
-            <value>Give Execution priority</value>
-         </widget>
          <widget type="CheckBox">
             <key>/SST K-Omega/Equation/Active/0</key>
             <value>0</value>
+         </widget>
+         <widget type="Label">
+            <key>/Mesh Update/Equation/Give Execution priority/0</key>
+            <value>Give Execution priority</value>
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/Equation/Priority/0</key>
@@ -853,15 +853,15 @@
             <value>Activate for this equation set</value>
          </widget>
          <widget type="Label">
-            <key>/Flux and Gradient/Equation/Give Execution priority/0</key>
-            <value>Give Execution priority</value>
-         </widget>
-         <widget type="Label">
             <key>/Linear elasticity/Equation/Give Execution priority/0</key>
             <value>Give Execution priority</value>
          </widget>
          <widget type="Label">
             <key>/Poisson-Boltzmann equation/Equation/Give Execution priority/0</key>
+            <value>Give Execution priority</value>
+         </widget>
+         <widget type="Label">
+            <key>/Flux and Gradient/Equation/Give Execution priority/0</key>
             <value>Give Execution priority</value>
          </widget>
          <widget type="CheckBox">
@@ -888,13 +888,13 @@
             <key>/Result Output/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
          </widget>
-         <widget type="Combo">
-            <key>/Advection Diffusion Equation/Equation/Convection/0</key>
-            <value>None</value>
-         </widget>
          <widget type="Label">
             <key>/Result Output/Equation/Give Execution priority/0</key>
             <value>Give Execution priority</value>
+         </widget>
+         <widget type="Combo">
+            <key>/Advection Diffusion Equation/Equation/Convection/0</key>
+            <value>None</value>
          </widget>
          <widget type="CheckBox">
             <key>/Navier-Stokes/Equation/Convect/0</key>
@@ -905,20 +905,20 @@
             <value>0</value>
          </widget>
          <widget type="Label">
-            <key>/MgDyn2DPost/Equation/Give Execution priority/0</key>
-            <value>Give Execution priority</value>
-         </widget>
-         <widget type="Label">
             <key>/Nonlinear elasticity/Equation/Give Execution priority/0</key>
             <value>Give Execution priority</value>
          </widget>
-         <widget type="TextEdit">
-            <key>/Reynolds Equation/Equation/Free text/0</key>
-            <value></value>
+         <widget type="Label">
+            <key>/MgDyn2DPost/Equation/Give Execution priority/0</key>
+            <value>Give Execution priority</value>
          </widget>
          <widget type="CheckBox">
             <key>/Mesh Update/Equation/Active/0</key>
             <value>0</value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Reynolds Equation/Equation/Free text/0</key>
+            <value></value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/Equation/Give Execution priority/0</key>
@@ -941,12 +941,12 @@
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Vector Helmholtz Equation/Equation/Give Execution priority/0</key>
-            <value>Give Execution priority</value>
-         </widget>
-         <widget type="Label">
             <key>/Vorticity/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
+         </widget>
+         <widget type="Label">
+            <key>/Vector Helmholtz Equation/Equation/Give Execution priority/0</key>
+            <value>Give Execution priority</value>
          </widget>
          <widget type="Label">
             <key>/Elastic Plates/Equation/Give Execution priority/0</key>
@@ -964,13 +964,13 @@
             <key>/Advection Diffusion Equation/Equation/Give Execution priority/0</key>
             <value>Give Execution priority</value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/Equation/Element Codes/0</key>
-            <value></value>
-         </widget>
          <widget type="CheckBox">
             <key>/Elastic Plates/Equation/Active/0</key>
             <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/Equation/Element Codes/0</key>
+            <value></value>
          </widget>
          <widget type="Label">
             <key>/Vector Helmholtz Post Process/Equation/Activate for this equation set/0</key>
@@ -1032,13 +1032,13 @@
             <key>/Divergence/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
          </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Equation/Priority/0</key>
-            <value></value>
-         </widget>
          <widget type="Combo">
             <key>/Advection Diffusion Equation/Equation/Concentration Units/0</key>
             <value>Absolute Mass</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Equation/Priority/0</key>
+            <value></value>
          </widget>
          <widget type="Label">
             <key>/Mesh Update/Equation/Free text input/0</key>
@@ -1049,32 +1049,32 @@
             <value>This and that</value>
          </widget>
          <widget type="Label">
-            <key>/Poisson-Boltzmann equation/Equation/Activate for this equation set/0</key>
-            <value>Activate for this equation set</value>
-         </widget>
-         <widget type="Label">
             <key>/Navier-Stokes/Equation/Give Execution priority/0</key>
             <value>Give Execution priority</value>
          </widget>
          <widget type="Label">
+            <key>/Poisson-Boltzmann equation/Equation/Activate for this equation set/0</key>
+            <value>Activate for this equation set</value>
+         </widget>
+         <widget type="Label">
             <key>/SaveScalars/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
+         </widget>
+         <widget type="Label">
+            <key>/Nonlinear elasticity/Equation/Options/0</key>
+            <value>Options</value>
          </widget>
          <widget type="CheckBox">
             <key>/Vector Helmholtz Post Process/Equation/Active/0</key>
             <value>0</value>
          </widget>
          <widget type="Label">
-            <key>/Nonlinear elasticity/Equation/Options/0</key>
-            <value>Options</value>
+            <key>/Helmholtz Equation/Equation/This and that/0</key>
+            <value>This and that</value>
          </widget>
          <widget type="Label">
             <key>/Flux and Gradient/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
-         </widget>
-         <widget type="Label">
-            <key>/Helmholtz Equation/Equation/This and that/0</key>
-            <value>This and that</value>
          </widget>
          <widget type="CheckBox">
             <key>/Static Current Conduction/Equation/Active/0</key>
@@ -1113,12 +1113,12 @@
             <value>Give Execution priority</value>
          </widget>
          <widget type="Label">
-            <key>/MgDynPost/Equation/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
             <key>/Nonlinear elasticity/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDynPost/Equation/Free text input/0</key>
+            <value>Free text input</value>
          </widget>
          <widget type="Label">
             <key>/MgDyn2D/Equation/Give Execution priority/0</key>
@@ -1148,13 +1148,13 @@
             <key>/Heat Equation/Equation/Free text/0</key>
             <value></value>
          </widget>
-         <widget type="Label">
-            <key>/Vector Helmholtz Equation/Equation/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
          <widget type="Edit">
             <key>/K-Epsilon/Equation/Priority/0</key>
             <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Vector Helmholtz Equation/Equation/Free text input/0</key>
+            <value>Free text input</value>
          </widget>
          <widget type="CheckBox">
             <key>/Linear elasticity/Equation/Plane Stress/0</key>
@@ -1201,12 +1201,12 @@
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Reynolds Equation/Equation/Give Execution priority/0</key>
-            <value>Give Execution priority</value>
-         </widget>
-         <widget type="Label">
             <key>/SST K-Omega/Equation/Free text input/0</key>
             <value>Free text input</value>
+         </widget>
+         <widget type="Label">
+            <key>/Reynolds Equation/Equation/Give Execution priority/0</key>
+            <value>Give Execution priority</value>
          </widget>
          <widget type="Edit">
             <key>/Helmholtz Equation/Equation/Convection Velocity 3/0</key>
@@ -1236,13 +1236,13 @@
             <key>/Electrostatics/Equation/Activate for this equation set/0</key>
             <value>Activate for this equation set</value>
          </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/Equation/Element Codes/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/Navier-Stokes/Equation/This and that/0</key>
             <value>This and that</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Helmholtz Equation/Equation/Element Codes/0</key>
+            <value></value>
          </widget>
          <widget type="Label">
             <key>/Result Output/Equation/Free text input/0</key>
@@ -1271,12 +1271,16 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/MgDyn2D/Material/Magnetization 2/0</key>
+            <key>/Navier-Stokes/Material/Smagorinsky Constant/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Navier-Stokes/Material/Smagorinsky Constant/0</key>
+            <key>/MgDyn2D/Material/Magnetization 2/0</key>
             <value></value>
+         </widget>
+         <widget type="Combo">
+            <key>/Navier-Stokes/Material/Viscosity Model/0</key>
+            <value>None</value>
          </widget>
          <widget type="Edit">
             <key>/Linear elasticity/Material/Rayleigh beta/0</key>
@@ -1290,13 +1294,9 @@
             <key>/MgDyn2D/Material/Magnetization 1/0</key>
             <value></value>
          </widget>
-         <widget type="Combo">
-            <key>/Navier-Stokes/Material/Viscosity Model/0</key>
-            <value>None</value>
-         </widget>
          <widget type="Edit">
             <key>/Linear elasticity/Material/Damping coefficient/0</key>
-            <value></value>
+            <value>1e7</value>
          </widget>
          <widget type="Label">
             <key>/Linear elasticity/Material/Material pricipal directions/0</key>
@@ -1314,13 +1314,13 @@
             <key>/Navier-Stokes/Material/Levelset Bandwidth/0</key>
             <value></value>
          </widget>
-         <widget type="Label">
-            <key>/MgDyn2DHarmonic/Material/Properties/0</key>
-            <value>Properties</value>
-         </widget>
          <widget type="TextEdit">
             <key>/Navier-Stokes/Material/Free text/0</key>
             <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn2DHarmonic/Material/Properties/0</key>
+            <value>Properties</value>
          </widget>
          <widget type="TextEdit">
             <key>/Reynolds Equation/Material/Free text/0</key>
@@ -1330,12 +1330,12 @@
             <key>/Elastic Plates/Material/Tension/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DHarmonic/Material/Relative Permeability/0</key>
-            <value></value>
-         </widget>
          <widget type="TextEdit">
             <key>/SST K-Omega/Material/Free text/0</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DHarmonic/Material/Relative Permeability/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -1390,20 +1390,20 @@
             <key>/Helmholtz Equation/Material/Free text input/0</key>
             <value>Free text input</value>
          </widget>
-         <widget type="Edit">
-            <key>/MgDyn/Material/Magnetization 2/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/K-Epsilon/Material/Properties/0</key>
             <value>Properties</value>
          </widget>
          <widget type="Edit">
-            <key>/General/Material/Specific Heat Ratio/0</key>
+            <key>/MgDyn/Material/Magnetization 2/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
             <key>/SST K-Omega/Material/Turbulent Prandtl Number/0</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/General/Material/Specific Heat Ratio/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -1434,13 +1434,13 @@
             <key>/MgDyn2D/Material/Reluctivity/0</key>
             <value></value>
          </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Material/Rayleigh Damping/0</key>
-            <value>0</value>
-         </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/Material/Viscosity Exponent/0</key>
             <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Material/Rayleigh Damping/0</key>
+            <value>0</value>
          </widget>
          <widget type="Edit">
             <key>/Reynolds Equation/Material/Specific Heat Ratio/0</key>
@@ -1451,11 +1451,11 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Richards Equation/Material/van Genuchten N/0</key>
+            <key>/Navier-Stokes/Material/Viscosity Difference/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Navier-Stokes/Material/Viscosity Difference/0</key>
+            <key>/Richards Equation/Material/van Genuchten N/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -1463,11 +1463,11 @@
             <value>0.34</value>
          </widget>
          <widget type="Edit">
-            <key>/Poisson-Boltzmann equation/Material/Reference Temperature/0</key>
+            <key>/Navier-Stokes/Material/Viscosity Temp Ref/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Navier-Stokes/Material/Viscosity Temp Ref/0</key>
+            <key>/Poisson-Boltzmann equation/Material/Reference Temperature/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -1503,16 +1503,16 @@
             <value></value>
          </widget>
          <widget type="Edit">
+            <key>/K-Epsilon/Material/KE Clip/0</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
             <key>/Poisson-Boltzmann equation/Material/Poisson Boltzmann Beta/0</key>
             <value></value>
          </widget>
          <widget type="Label">
             <key>/Reynolds Equation/Material/Free text input/0</key>
             <value>Free text input</value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/Material/KE Clip/0</key>
-            <value></value>
          </widget>
          <widget type="Edit">
             <key>/MgDyn2DHarmonic/Material/Magnetization 2/0</key>
@@ -1531,11 +1531,11 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Richards Equation/Material/Saturated Water Content/0</key>
+            <key>/SST K-Omega/Material/KE Cmu/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/SST K-Omega/Material/KE Cmu/0</key>
+            <key>/Richards Equation/Material/Saturated Water Content/0</key>
             <value></value>
          </widget>
          <widget type="Label">
@@ -1547,12 +1547,12 @@
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/MgDyn/Material/Material properties/0</key>
-            <value>Material properties</value>
-         </widget>
-         <widget type="Label">
             <key>/Model PDE/Material/Properties/0</key>
             <value>Properties</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn/Material/Material properties/0</key>
+            <value>Material properties</value>
          </widget>
          <widget type="Edit">
             <key>/Poisson-Boltzmann equation/Material/Ion Density/0</key>
@@ -1638,13 +1638,13 @@
             <key>/Poisson-Boltzmann equation/Material/Dimensional Properties/0</key>
             <value>Dimensional Properties</value>
          </widget>
-         <widget type="TextEdit">
-            <key>/Helmholtz Equation/Material/Free text/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/General/Material/Properties/0</key>
             <value>Properties</value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Helmholtz Equation/Material/Free text/0</key>
+            <value></value>
          </widget>
          <widget type="Edit">
             <key>/MgDyn2D/Material/H-B Curve/0</key>
@@ -1710,29 +1710,29 @@
             <key>/Advection Diffusion Equation/Material/Concentration Maximum Solubility/0</key>
             <value></value>
          </widget>
+         <widget type="Label">
+            <key>/Navier-Stokes/Material/Free text input/0</key>
+            <value>Free text input</value>
+         </widget>
          <widget type="Edit">
             <key>/Linear elasticity/Material/Strain 6-vector/0</key>
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Navier-Stokes/Material/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
             <key>/Heat Equation/Material/Free text input/0</key>
             <value>Free text input</value>
          </widget>
-         <widget type="Label">
-            <key>/Vector Helmholtz Equation/Material/Material properties/0</key>
-            <value>Material properties</value>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Material/Viscosity Transition/0</key>
+            <value></value>
          </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/Material/Poisson ratio/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/Material/Viscosity Transition/0</key>
-            <value></value>
+         <widget type="Label">
+            <key>/Vector Helmholtz Equation/Material/Material properties/0</key>
+            <value>Material properties</value>
          </widget>
          <widget type="Edit">
             <key>/Free Surface/Material/Min FreeSurface/0</key>
@@ -1747,11 +1747,11 @@
             <value>Properties</value>
          </widget>
          <widget type="Edit">
-            <key>/Reynolds Equation/Material/Flow Admittance/0</key>
+            <key>/MgDyn2DHarmonic/Material/H-B Curve/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/MgDyn2DHarmonic/Material/H-B Curve/0</key>
+            <key>/Reynolds Equation/Material/Flow Admittance/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -1798,13 +1798,13 @@
             <key>/Elastic Plates/Material/Poisson ratio/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/MgDyn/Material/Reluctivity/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/Navier-Stokes/Material/Porous media settings/0</key>
             <value>Porous media settings</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn/Material/Reluctivity/0</key>
+            <value></value>
          </widget>
          <widget type="Combo">
             <key>/Richards Equation/Material/Porosity Model/0</key>
@@ -1814,13 +1814,13 @@
             <key>/SST K-Omega/Material/Free text input/0</key>
             <value>Free text input</value>
          </widget>
-         <widget type="TextEdit">
-            <key>/General/Material/Free text/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/Nonlinear elasticity/Material/Free text input/0</key>
             <value>Free text input</value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/General/Material/Free text/0</key>
+            <value></value>
          </widget>
          <widget type="TextEdit">
             <key>/K-Epsilon/Material/Free text/0</key>
@@ -1915,19 +1915,19 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Heat Equation/Material/Enthalpy/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
             <key>/Navier-Stokes/Material/Artificial Compressibility/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/MgDyn/Material/H-B Curve/0</key>
+            <key>/Heat Equation/Material/Enthalpy/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
             <key>/MgDyn/Material/Relative Permeability/0</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn/Material/H-B Curve/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -2008,13 +2008,13 @@
             <key>/Navier-Stokes/BodyForce/Volume forces/0</key>
             <value>Volume forces</value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BodyForce/Current Density 1 (real part)/0</key>
-            <value></value>
-         </widget>
          <widget type="CheckBox">
             <key>/Navier-Stokes/BodyForce/Hydrostatic pressure/0</key>
             <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BodyForce/Current Density 1 (real part)/0</key>
+            <value></value>
          </widget>
          <widget type="Edit">
             <key>/Elastic Plates/BodyForce/Deflection 1 Condition/0</key>
@@ -2168,13 +2168,13 @@
             <key>/Linear elasticity/BodyForce/Stress 6-vector/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/BodyForce/Velocity 3 Condition/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/Navier-Stokes/BodyForce/Free text input/0</key>
             <value>Free text input</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/BodyForce/Velocity 3 Condition/0</key>
+            <value></value>
          </widget>
          <widget type="Edit">
             <key>/Mesh Update/BodyForce/Mesh Update 3 Condition/0</key>
@@ -2392,25 +2392,25 @@
             <key>/Advection Diffusion Equation/BodyForce/Concentration Diffusion Source/0</key>
             <value></value>
          </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/BodyForce/Velocity 3/0</key>
+            <value></value>
+         </widget>
          <widget type="Label">
             <key>/Reynolds Equation/BodyForce/Free text input/0</key>
             <value>Free text input</value>
          </widget>
          <widget type="Edit">
-            <key>/Navier-Stokes/BodyForce/Velocity 3/0</key>
+            <key>/Free Surface/BodyForce/Accumulation/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Free Surface/BodyForce/Accumulation/0</key>
+            <key>/Navier-Stokes/BodyForce/Velocity 2/0</key>
             <value></value>
          </widget>
          <widget type="Label">
             <key>/MgDyn2DHarmonic/BodyForce/Properties/0</key>
             <value>Properties</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/BodyForce/Velocity 2/0</key>
-            <value></value>
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/BodyForce/Perfusion Heat Capacity/0</key>
@@ -2420,12 +2420,12 @@
             <key>/MgDyn/BodyForce/Electric Potential/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BodyForce/Current Density 1 (imag part)/0</key>
-            <value></value>
-         </widget>
          <widget type="TextEdit">
             <key>/Linear elasticity/BodyForce/Free text/0</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BodyForce/Current Density 1 (imag part)/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -2532,362 +2532,17 @@
             <key>/Richards Equation/BodyForce/Richards Source/0</key>
             <value></value>
          </widget>
-         <widget type="Label">
-            <key>/Vector Helmholtz Equation/BodyForce/Volume sources/0</key>
-            <value>Volume sources</value>
-         </widget>
          <widget type="CheckBox">
             <key>/Heat Equation/BodyForce/Smart Heater Control/0</key>
             <value>0</value>
          </widget>
+         <widget type="Label">
+            <key>/Vector Helmholtz Equation/BodyForce/Volume sources/0</key>
+            <value>Volume sources</value>
+         </widget>
       </item>
    </bodyforce>
-   <initialcondition>
-      <item index="0">
-         <active>1</active>
-         <name>InitialCondition 1</name>
-         <widget type="Edit">
-            <key>/Mesh Update/InitialCondition/Mesh Update 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/InitialCondition/Mesh Velocity 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/InitialCondition/Velocity 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/InitialCondition/Kinetic Energy/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Reynolds Equation/InitialCondition/FilmPressure/0</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Heat Equation/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/InitialCondition/Displacement 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Model PDE/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/InitialCondition/...for time dependent simulations.../0</key>
-            <value>...for time dependent simulations...</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Model PDE/InitialCondition/Field/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/InitialCondition/FreeSurface/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DHarmonic/InitialCondition/Potential Re/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/InitialCondition/Mesh Update 1/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Static Current Conduction/InitialCondition/Potential/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn/InitialCondition/AV {e}/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Navier-Stokes/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/InitialCondition/Displacement 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/InitialCondition/Velocity 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Advection Diffusion Equation/InitialCondition/Concentration/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn/InitialCondition/Initial values for potential(s)/0</key>
-            <value>Initial values for potential(s)</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/InitialCondition/Pressure wave 2 (imag part)/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/InitialCondition/Displacement 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Mesh Update/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/InitialCondition/Mesh Velocity 1/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Mesh Update/InitialCondition/...for time dependent simulations.../0</key>
-            <value>...for time dependent simulations...</value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/InitialCondition/Kinetic Energy/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DHarmonic/InitialCondition/Potential Im/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Free Surface/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/Advection Diffusion Equation/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/InitialCondition/Displacement 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Nonlinear elasticity/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Poisson-Boltzmann equation/InitialCondition/Properties/0</key>
-            <value>Properties</value>
-         </widget>
-         <widget type="Label">
-            <key>/SST K-Omega/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/SST K-Omega/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Nonlinear elasticity/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/InitialCondition/Kinetic Dissipation/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/InitialCondition/Displacement Velocity 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/InitialCondition/Displacement Velocity 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/SST K-Omega/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/Helmholtz Equation/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
-            <key>/Mesh Update/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn2D/InitialCondition/Properties/0</key>
-            <value>Properties</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/InitialCondition/Deflection 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Mesh Update/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/Elastic Plates/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Helmholtz Equation/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Heat Equation/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Navier-Stokes/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn/InitialCondition/AV/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Electrostatics/InitialCondition/Properties/0</key>
-            <value>Properties</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/InitialCondition/Deflection 1/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/InitialCondition/Pressure/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/InitialCondition/Deflection 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/InitialCondition/Displacement Velocity 1/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Poisson-Boltzmann equation/InitialCondition/Potential/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Nonlinear elasticity/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
-            <key>/Helmholtz Equation/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2D/InitialCondition/Az/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/InitialCondition/Wall Distance/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/InitialCondition/Velocity 1/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/InitialCondition/Pressure wave 1 (real part)/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn2DHarmonic/InitialCondition/Properties/0</key>
-            <value>Properties</value>
-         </widget>
-         <widget type="Label">
-            <key>/Static Current Conduction/InitialCondition/Properties/0</key>
-            <value>Properties</value>
-         </widget>
-         <widget type="Label">
-            <key>/Nonlinear elasticity/InitialCondition/...for time dependent simulations.../0</key>
-            <value>...for time dependent simulations...</value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/InitialCondition/Kinetic Dissipation/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/InitialCondition/Displacement 1/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/InitialCondition/Temperature/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Richards Equation/InitialCondition/Total Head/0</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/K-Epsilon/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/InitialCondition/Mesh Update 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Richards Equation/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/Navier-Stokes/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
-            <key>/Reynolds Equation/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/Heat Equation/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/K-Epsilon/InitialCondition/Variables/0</key>
-            <value>Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/InitialCondition/Displacement Velocity 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/InitialCondition/Displacement 1/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Electrostatics/InitialCondition/Potential/0</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Linear elasticity/InitialCondition/Free text/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/InitialCondition/Displacement Velocity 2/0</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/K-Epsilon/InitialCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/InitialCondition/Mesh Velocity 3/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/InitialCondition/Displacement Velocity 1/0</key>
-            <value>-1000</value>
-         </widget>
-      </item>
-   </initialcondition>
+   <initialcondition/>
    <boundarycondition>
       <item index="0">
          <active>1</active>
@@ -3144,13 +2799,13 @@
             <key>/Mesh Update/BoundaryCondition/Normal-Tangential Coordinate System/0</key>
             <value>Normal-Tangential Coordinate System</value>
          </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/BoundaryCondition/Save Scalars/0</key>
-            <value>0</value>
-         </widget>
          <widget type="Label">
             <key>/Nonlinear elasticity/BoundaryCondition/Nodal Loads/0</key>
             <value>Nodal Loads</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveScalars/BoundaryCondition/Save Scalars/0</key>
+            <value>0</value>
          </widget>
          <widget type="CheckBox">
             <key>/Mesh Update/BoundaryCondition/Mesh Update 2 periodic/0</key>
@@ -3173,11 +2828,11 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Navier-Stokes/BoundaryCondition/Pressure 2/0</key>
+            <key>/Advection Diffusion Equation/BoundaryCondition/Mass Transfer Coeff./0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Advection Diffusion Equation/BoundaryCondition/Mass Transfer Coeff./0</key>
+            <key>/Navier-Stokes/BoundaryCondition/Pressure 2/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -3200,13 +2855,13 @@
             <key>/General/BoundaryCondition/Free text/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BoundaryCondition/E re {e} 2/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/MgDyn/BoundaryCondition/Dirichlet conditions via magnetic flux density/0</key>
             <value>Dirichlet conditions via magnetic flux density</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BoundaryCondition/E re {e} 2/0</key>
+            <value></value>
          </widget>
          <widget type="Edit">
             <key>/Vector Helmholtz Equation/BoundaryCondition/Electric Robin Coefficient im/0</key>
@@ -3277,19 +2932,19 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/MgDyn/BoundaryCondition/AV/0</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
             <key>/SST K-Omega/BoundaryCondition/Kinetic Dissipation Condition/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BoundaryCondition/Magnetic Boundary Load im 3/0</key>
+            <key>/MgDyn/BoundaryCondition/AV/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/BoundaryCondition/Slip Coefficient 2/0</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BoundaryCondition/Magnetic Boundary Load im 3/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -3300,13 +2955,13 @@
             <key>/Free Surface/BoundaryCondition/Dirichlet Conditions/0</key>
             <value>Dirichlet Conditions</value>
          </widget>
-         <widget type="Label">
-            <key>/Navier-Stokes/BoundaryCondition/Free text input/0</key>
-            <value>Free text input</value>
-         </widget>
          <widget type="Edit">
             <key>/K-Epsilon/BoundaryCondition/Kinetic Dissipation Condition/0</key>
             <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Navier-Stokes/BoundaryCondition/Free text input/0</key>
+            <value>Free text input</value>
          </widget>
          <widget type="Label">
             <key>/Nonlinear elasticity/BoundaryCondition/Dirichlet Conditions/0</key>
@@ -3377,11 +3032,11 @@
             <value></value>
          </widget>
          <widget type="CheckBox">
-            <key>/Linear elasticity/BoundaryCondition/Displacement 3 periodic/0</key>
+            <key>/Navier-Stokes/BoundaryCondition/Velocity 2 periodic/0</key>
             <value>0</value>
          </widget>
          <widget type="CheckBox">
-            <key>/Navier-Stokes/BoundaryCondition/Velocity 2 periodic/0</key>
+            <key>/Linear elasticity/BoundaryCondition/Displacement 3 periodic/0</key>
             <value>0</value>
          </widget>
          <widget type="Label">
@@ -3405,11 +3060,11 @@
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BoundaryCondition/E im {e} 2/0</key>
+            <key>/Navier-Stokes/BoundaryCondition/Velocity 3 Condition/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Navier-Stokes/BoundaryCondition/Velocity 3 Condition/0</key>
+            <key>/Vector Helmholtz Equation/BoundaryCondition/E im {e} 2/0</key>
             <value></value>
          </widget>
          <widget type="Edit">
@@ -3440,13 +3095,13 @@
             <key>/Heat Equation/BoundaryCondition/Periodic boundary condition/0</key>
             <value>Periodic boundary condition</value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BoundaryCondition/E im {f} 1/0</key>
-            <value></value>
-         </widget>
          <widget type="CheckBox">
             <key>/K-Epsilon/BoundaryCondition/Reichardts Wall Law/0</key>
             <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BoundaryCondition/E im {f} 1/0</key>
+            <value></value>
          </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/BoundaryCondition/Displacement 1/0</key>
@@ -3464,13 +3119,13 @@
             <key>/K-Epsilon/BoundaryCondition/Kinetic Dissipation Rate Boundary Relaxation/0</key>
             <value></value>
          </widget>
-         <widget type="CheckBox">
-            <key>/MgDyn2D/BoundaryCondition/Infinity BC/0</key>
-            <value>0</value>
-         </widget>
          <widget type="Edit">
             <key>/Advection Diffusion Equation/BoundaryCondition/Concentration Condition/0</key>
             <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn2D/BoundaryCondition/Infinity BC/0</key>
+            <value>0</value>
          </widget>
          <widget type="CheckBox">
             <key>/Mesh Update/BoundaryCondition/Mesh Update 1 periodic/0</key>
@@ -3484,13 +3139,13 @@
             <key>/Helmholtz Equation/BoundaryCondition/Free text/0</key>
             <value></value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BoundaryCondition/E im {f} 3/0</key>
-            <value></value>
-         </widget>
          <widget type="Label">
             <key>/General/BoundaryCondition/Periodic boundary conditions/0</key>
             <value>Periodic boundary conditions</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BoundaryCondition/E im {f} 3/0</key>
+            <value></value>
          </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/BoundaryCondition/Displacement 3/0</key>
@@ -3604,6 +3259,10 @@
             <key>/Navier-Stokes/BoundaryCondition/Surface Tension Coefficient/0</key>
             <value></value>
          </widget>
+         <widget type="Label">
+            <key>/Navier-Stokes/BoundaryCondition/Periodic BCs/0</key>
+            <value>Periodic BCs</value>
+         </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/BoundaryCondition/Displacement 1 Load/0</key>
             <value></value>
@@ -3611,10 +3270,6 @@
          <widget type="Edit">
             <key>/Richards Equation/BoundaryCondition/Total Head Condition/0</key>
             <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Navier-Stokes/BoundaryCondition/Periodic BCs/0</key>
-            <value>Periodic BCs</value>
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/BoundaryCondition/Velocity 2/0</key>
@@ -3693,12 +3348,12 @@
             <value>0</value>
          </widget>
          <widget type="Label">
-            <key>/Electrostatics/BoundaryCondition/Dirichlet conditions/0</key>
-            <value>Dirichlet conditions</value>
-         </widget>
-         <widget type="Label">
             <key>/Advection Diffusion Equation/BoundaryCondition/Dirichlet Conditions/0</key>
             <value>Dirichlet Conditions</value>
+         </widget>
+         <widget type="Label">
+            <key>/Electrostatics/BoundaryCondition/Dirichlet conditions/0</key>
+            <value>Dirichlet conditions</value>
          </widget>
          <widget type="Edit">
             <key>/MgDyn2DHarmonic/BoundaryCondition/Potential Re Condition/0</key>
@@ -3720,21 +3375,21 @@
             <key>/Linear elasticity/BoundaryCondition/Dirichlet Conditions/0</key>
             <value>Dirichlet Conditions</value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BoundaryCondition/E re {e} 3/0</key>
-            <value></value>
-         </widget>
          <widget type="CheckBox">
             <key>/Mesh Update/BoundaryCondition/Change of variables/0</key>
             <value>1</value>
          </widget>
-         <widget type="Label">
-            <key>/MgDyn2DHarmonic/BoundaryCondition/Neumann conditions/0</key>
-            <value>Neumann conditions</value>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BoundaryCondition/E re {e} 3/0</key>
+            <value></value>
          </widget>
          <widget type="TextEdit">
             <key>/Navier-Stokes/BoundaryCondition/Free text/0</key>
             <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn2DHarmonic/BoundaryCondition/Neumann conditions/0</key>
+            <value>Neumann conditions</value>
          </widget>
          <widget type="Label">
             <key>/K-Epsilon/BoundaryCondition/Dirichlet Conditions/0</key>
@@ -3872,10 +3527,6 @@
             <key>/K-Epsilon/BoundaryCondition/Wall law/0</key>
             <value>Wall law</value>
          </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/BoundaryCondition/Magnetic Boundary Load im 2/0</key>
-            <value></value>
-         </widget>
          <widget type="CheckBox">
             <key>/Elastic Plates/BoundaryCondition/Deflection 2 periodic/0</key>
             <value>0</value>
@@ -3883,6 +3534,10 @@
          <widget type="Label">
             <key>/Mesh Update/BoundaryCondition/Dirichlet Conditions/0</key>
             <value>Dirichlet Conditions</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/BoundaryCondition/Magnetic Boundary Load im 2/0</key>
+            <value></value>
          </widget>
          <widget type="CheckBox">
             <key>/Navier-Stokes/BoundaryCondition/Use normal-tangential coordinate system/0</key>
@@ -4043,1326 +3698,1326 @@
       </item>
    </boundarycondition>
    <solverspecificoptions>
-      <item index="10" id="10" name="Linear elasticity">
-         <widget type="Edit">
-            <key>/Static Current Conduction/Solver/Current Control/10</key>
-            <value></value>
-         </widget>
+      <item index="1" id="1" name="Linear elasticity">
          <widget type="CheckBox">
-            <key>/Vector Helmholtz Post Process/Solver/Calculate Magnetic Field Strength/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Save Boundaries Only/10</key>
+            <key>/Flux and Gradient/Solver/Calculate Grad/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/MgDyn2DPost/Solver/Target Variable/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/Solver/Variable/10</key>
-            <value>Pressure Wave(2)</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Skip Nodal Fields/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/Solver/Exported Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Combo">
-            <key>/SaveScalars/Solver/Operator 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Post Process/Solver/Calculate Magnetic Flux/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Navier-Stokes/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Flux and Gradient/Solver/Enforce Positive Magnitude/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Poisson-Boltzmann equation/Solver/Procedure/10</key>
-            <value>"PoissonBoltzmannSolve" "PoissonBoltzmannSolve"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Reynolds Equation/Solver/Apply Limiter/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDyn2DPost/Solver/Calculate Joule Heating/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Elastic Plates/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DPost/Solver/Desired Heating Power/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/Solver/Exported Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveLine/Solver/Polyline Coordinates/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Flux and Gradient/Solver/Calculate Flux/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Vector Field 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Save Geometry Ids/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Exported Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Nonlinear elasticity/Solver/Displace mesh/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/Solver/Procedure/10</key>
-            <value>"FreeSurfaceSolver" "FreeSurfaceSolver"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Calculate Joule Heating/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Post Process/Solver/Calculate Electric Field/10</key>
-            <value>0</value>
+            <key>/Heat Equation/Solver/Procedure/1</key>
+            <value>"HeatSolve" "HeatSolver"</value>
          </widget>
          <widget type="TextEdit">
-            <key>/Helmholtz Equation/Solver/Free text/10</key>
+            <key>/Nonlinear elasticity/Solver/Free text/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/SaveScalars/Solver/Coefficient 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Heat Equation/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2D/Solver/Procedure/10</key>
-            <value>"MagnetoDynamics2D" "MagnetoDynamics2D"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Richards Equation/Solver/Active Coordinate/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Static Current Conduction/Solver/Calculate Volume Current/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Eigen System Values/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Navier-Stokes/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Scalar Field 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Procedure/10</key>
-            <value>"SaveData" "SaveScalars"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Divergence/Solver/Target Variable/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Heat Equation/Solver/Matrix Topology Fixed/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/Solver/Exported Variable 1/10</key>
-            <value>FreeSurface Residual</value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDynPost/Solver/MagnetoDynamics field computation/10</key>
-            <value>MagnetoDynamics field computation</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/Solver/Procedure/10</key>
-            <value>"MeshSolve" "MeshSolver"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/Solver/Save Flux/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn/Solver/Variable/10</key>
-            <value>AV</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Eigen System Shift/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/Solver/Exact Coordinates/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Static Current Conduction/Solver/Variable/10</key>
-            <value>Potential</value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/Solver/Exported Variable 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Free Surface/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Vector Helmholtz Equation/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/Solver/Harmonic system solution/10</key>
-            <value>Harmonic system solution</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Save Nodal Fields/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Electrostatics/Solver/Capacitance Bodies/10</key>
-            <value></value>
-         </widget>
-         <widget type="Combo">
-            <key>/SaveScalars/Solver/Operator 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Richards Equation/Solver/Variable/10</key>
-            <value>Total Head</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Post Process/Solver/Calculate Energy Functional/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Stability Analysis/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/SST K-Omega/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Coefficient 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveLine/Solver/Flux Variable/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Flux and Gradient/Solver/Calculate Grad Magnitude/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Flux and Gradient/Solver/Flux Coefficient/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Advection Diffusion Equation/Solver/Procedure/10</key>
-            <value>"AdvectionDiffusion" "AdvectionDiffusionSolver"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Electrostatics/Solver/Calculate Capacitance Matrix/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Flux Variable/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/K-Epsilon/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Label">
-            <key>/Nonlinear elasticity/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/Solver/Procedure/10</key>
-            <value>"FlowSolve" "FlowSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/Solver/Variable/10</key>
-            <value>Flow Solution[Velocity:cdim Pressure:1]</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Linear elasticity/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Divergence/Solver/Procedure/10</key>
-            <value>"DivergenceSolver" "DivergenceSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Scalar Field 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Calculate Nodal Forces/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Free Surface/Solver/Apply Limits/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Result Output/Solver/Scalar Fields/10</key>
-            <value>Scalar Fields</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Eigen System Damped/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Result Output/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Geometric Stiffness/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Equation/Solver/Use Piola Transform/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/SST K-Omega/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/Solver/Exported Variable 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Reynolds Equation/Solver/Procedure/10</key>
-            <value>"ReynoldsSolver" "ReynoldsSolver"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDyn/Solver/Fix Input Current Density/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Advection Diffusion Equation/Solver/Variable/10</key>
-            <value>Concentration</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DHarmonic/Solver/Variable/10</key>
-            <value>Potential[Potential Re:1 Potential Im:1]</value>
-         </widget>
-         <widget type="Label">
-            <key>/Result Output/Solver/Vector Fields/10</key>
-            <value>Vector Fields</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Comment/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Post Process/Solver/Calculate Div Poynting Vector/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Mesh Update/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Discontinuous Galerkin/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Combo">
-            <key>/SaveScalars/Solver/Operator 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveLine/Solver/Filename/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/Solver/Exported Variable 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn2DPost/Solver/Magnetic flux computation/10</key>
-            <value>Magnetic flux computation</value>
-         </widget>
-         <widget type="Label">
-            <key>/Vector Helmholtz Equation/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
-         </widget>
-         <widget type="Label">
-            <key>/Nonlinear elasticity/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Save Coordinates/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Electrostatics/Solver/Variable/10</key>
-            <value>Potential</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Procedure/10</key>
-            <value>"ResultOutputSolve" "ResultOutputSolver"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Post Process/Solver/Calculate Poynting Vector/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn/Solver/A-V formulation solver/10</key>
-            <value>A-V formulation solver</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/Solver/Exported Variable 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Poisson-Boltzmann equation/Solver/Constant Weights/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveLine/Solver/Filename Numbering/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Static Current Conduction/Solver/Power Control/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn/Solver/Variable for vector (and scalar) potential/10</key>
-            <value>Variable for vector (and scalar) potential</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Scalar Field 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Model Lumping Filename/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/Solver/Procedure/10</key>
-            <value>"HelmholtzSolve" "HelmholtzSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Electrostatics/Solver/Procedure/10</key>
-            <value>"StatElecSolve" "StatElecSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Vorticity/Solver/Target Variable/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/Solver/Model Lumping definitions/10</key>
-            <value>Model Lumping definitions</value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn2DPost/Solver/Loss Estimation/10</key>
-            <value>Loss Estimation</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Eigen System Shift/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Static Current Conduction/Solver/Procedure/10</key>
-            <value>"StatCurrentSolve" "StatCurrentSolver"</value>
-         </widget>
-         <widget type="Label">
-            <key>/Reynolds Equation/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Heat Equation/Solver/Update Gebhardt Factors/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Minimum Gebhardt Factor/10</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Reynolds Equation/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveLine/Solver/Save Axis/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Heat Equation/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Show Norm Index/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/Solver/Procedure/10</key>
-            <value>"KESolver" "KESolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/Solver/Exported Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/Solver/Parallel Reduce/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Flux and Gradient/Solver/Calculate Grad/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Harmonic Analysis/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn2DPost/Solver/Vector Potential/10</key>
-            <value>Vector Potential</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Viewfactor area tolerance/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Richards Equation/Solver/Procedure/10</key>
-            <value>"RichardsSolver" "RichardsSolver"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Flux and Gradient/Solver/Calculate Flux Magnitude/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Vector Field 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Combo">
-            <key>/SaveScalars/Solver/Operator 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Exported Variable 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Calculate Stresses/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Calculate Current Density/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Eigen Analysis/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Elastic Plates/Solver/Eigen Analysis/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Binary Output/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Electrostatics/Solver/Calculate Electric Flux/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Richards Equation/Solver/Saturated Initial Guess/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Nonlinear elasticity/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Divergence/Solver/Constant Bulk Matrix/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Navier-Stokes/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Discontinuous Bodies/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Elastic Plates/Solver/Eigen System Compute Residuals/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Static Current Conduction/Solver/Calculate Joule Heating/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveLine/Solver/File Append/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/Solver/Variable/10</key>
-            <value>FreeSurface</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Skip Elemental Fields/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveLine/Solver/Procedure/10</key>
-            <value>"SaveData" "SaveLine"</value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDynPost/Solver/Target Variable/10</key>
-            <value>Target Variable</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Save Points/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Electrostatics/Solver/Constant Weights/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/Solver/Procedure/10</key>
-            <value>"ElasticSolve" "ElasticSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DPost/Solver/Fourier Loss Field Exponent/10</key>
-            <value></value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Vector Helmholtz Equation/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Viewfactor number of rays/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/Solver/Variable/10</key>
-            <value>Mesh Update(cdim)</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vorticity/Solver/Constant Bulk Matrix/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Eigen System Values/10</key>
-            <value></value>
-         </widget>
-         <widget type="Combo">
-            <key>/SaveScalars/Solver/Operator 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Mesh Update/Solver/Exported Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/SST K-Omega/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Model PDE/Solver/Variable/10</key>
+            <key>/Model PDE/Solver/Variable/1</key>
             <value>Field</value>
          </widget>
          <widget type="Edit">
-            <key>/Vector Helmholtz Equation/Solver/Linear System Preconditioning Damp Coefficient/10</key>
+            <key>/Free Surface/Solver/Exported Variable 2/1</key>
             <value></value>
          </widget>
+         <widget type="CheckBox">
+            <key>/Poisson-Boltzmann equation/Solver/Calculate Electric Field/1</key>
+            <value>0</value>
+         </widget>
          <widget type="Edit">
-            <key>/MgDyn2D/Solver/Variable/10</key>
+            <key>/Electrostatics/Solver/Variable/1</key>
             <value>Potential</value>
          </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Combo">
-            <key>/Elastic Plates/Solver/Eigen System Select/10</key>
-            <value>Smallest magnitude</value>
-         </widget>
          <widget type="CheckBox">
-            <key>/Static Current Conduction/Solver/Constant Weights/10</key>
+            <key>/Flux and Gradient/Solver/Calculate Grad Magnitude/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/Elastic Plates/Solver/Exported Variable 3/10</key>
+            <key>/SaveLine/Solver/Flux Coefficient/1</key>
             <value></value>
          </widget>
          <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Fix Displacements/10</key>
+            <key>/SaveScalars/Solver/File Append/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/SaveScalars/Solver/Coefficient 1/10</key>
+            <key>/SaveLine/Solver/Filename/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Heat Equation/Solver/View Factors Geometry Tolerance/10</key>
-            <value></value>
-         </widget>
-         <widget type="Combo">
-            <key>/Result Output/Solver/Output Format/10</key>
-            <value>Vtu</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/Solver/Exported Variable 1/10</key>
-            <value></value>
+            <key>/Result Output/Solver/Output File Name/1</key>
+            <value>case</value>
          </widget>
          <widget type="CheckBox">
-            <key>/Electrostatics/Solver/Calculate Electric Energy/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Eigen Analysis/10</key>
+            <key>/Elastic Plates/Solver/Calculate Loads/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/MgDyn2DPost/Solver/Procedure/10</key>
-            <value>"MagnetoDynamics2D" "BSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Vorticity/Solver/Vorticity Coefficient/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Flux and Gradient/Solver/Target Variable/10</key>
+            <key>/SaveScalars/Solver/Filename/1</key>
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Mesh Update/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DPost/Solver/Fourier Loss Frequency Exponent/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Mesh Update/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Heat Equation/Solver/Parameters for 2- and 3D viewfactor computation/10</key>
-            <value>Parameters for 2- and 3D viewfactor computation</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Post Process/Solver/Field Variable/10</key>
-            <value>E</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Vector Helmholtz Equation/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/Solver/Exported Variable 5/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Variable/10</key>
-            <value>Displacement(cdim)</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Heat Equation/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Procedure/10</key>
-            <value>"Smitc" "SmitcSolver"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Electrostatics/Solver/Calculate Electric Field/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/Solver/Linear System Preconditioning Damp Coefficient im/10</key>
-            <value>1.0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/No Matrix Equation/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Eigen System Compute Residuals/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Helmholtz Equation/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Scalar Field 6/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Poisson-Boltzmann equation/Solver/Variable/10</key>
-            <value>Potential</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Implicit Gebhardt Factor Fraction/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/Solver/File Append/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Navier-Stokes/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDyn2DPost/Solver/Target Variable Complex/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Elastic Plates/Solver/Eigen System Damped/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/Solver/Exported Variable 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Discontinuous Galerkin/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/Viewfactor factor tolerance/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveLine/Solver/Flux Coefficient/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDynPost/Solver/Specify what kind of fields to compute/10</key>
-            <value>Specify what kind of fields to compute</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Procedure/10</key>
-            <value>"StressSolve" "StressSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Exported Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Heat Equation/Solver/View Factors Fixed After Iterations/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Vorticity/Solver/Procedure/10</key>
-            <value>"VorticitySolver" "VorticitySolver"</value>
-         </widget>
-         <widget type="Label">
-            <key>/Elastic Plates/Solver/Eigen system solution/10</key>
-            <value>Eigen system solution</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Displace mesh/10</key>
-            <value>1</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Helmholtz Equation/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Variable/10</key>
-            <value>Deflection(3)</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Save Linear Elements/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Equation/Solver/Procedure/10</key>
-            <value>"VectorHelmholtz" "VectorHelmholtzSolver"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Linear elasticity/Solver/Frequency/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Linear elasticity/Solver/Model Lumping/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveLine/Solver/Comment/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/Solver/More Options/10</key>
-            <value>More Options</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SST K-Omega/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Reynolds Equation/Solver/Variable/10</key>
-            <value>FilmPressure</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/Solver/Show Norm/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDyn2DPost/Solver/Average Within Materials/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Coefficient 3/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Nonlinear elasticity/Solver/Elasticity Solver Linear/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Heat Equation/Solver/Radiation Factor computation/10</key>
-            <value>Radiation Factor computation</value>
-         </widget>
-         <widget type="Label">
-            <key>/Helmholtz Equation/Solver/Free text input/10</key>
-            <value>Free text input</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Elastic Plates/Solver/Geometric Stiffness/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/Solver/Exported Variable 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Flux Coefficient/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDyn2DPost/Solver/Joule heat computation/10</key>
-            <value>Joule heat computation</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveLine/Solver/Save Flux/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Heat Equation/Solver/Gebhardt Factors Solver Full/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Heat Equation/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
-         </widget>
-         <widget type="Label">
-            <key>/Reynolds Equation/Solver/Definitions for cavitation/10</key>
+            <key>/Reynolds Equation/Solver/Definitions for cavitation/1</key>
             <value>Definitions for cavitation</value>
          </widget>
-         <widget type="CheckBox">
-            <key>/Elastic Plates/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Helmholtz Equation/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
+         <widget type="Edit">
+            <key>/Mesh Update/Solver/Procedure/1</key>
+            <value>"MeshSolve" "MeshSolver"</value>
          </widget>
          <widget type="Edit">
-            <key>/Result Output/Solver/Scalar Field 5/10</key>
+            <key>/Helmholtz Equation/Solver/Procedure/1</key>
+            <value>"HelmholtzSolve" "HelmholtzSolver"</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDynPost/Solver/Skip Elemental Fields/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DPost/Solver/Desired Heating Power/1</key>
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Result Output/Solver/Free text input/10</key>
+            <key>/SST K-Omega/Solver/Free text input/1</key>
             <value>Free text input</value>
          </widget>
+         <widget type="Label">
+            <key>/K-Epsilon/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/Solver/Variable/1</key>
+            <value>E[E re:1 E im:1]</value>
+         </widget>
+         <widget type="Label">
+            <key>/K-Epsilon/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Flux and Gradient/Solver/Flux Coefficient/1</key>
+            <value></value>
+         </widget>
          <widget type="CheckBox">
-            <key>/Result Output/Solver/Save Elemental Fields/10</key>
+            <key>/MgDynPost/Solver/Calculate Electric Field/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveLine/Solver/Save Flux/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vorticity/Solver/Target Variable/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Result Output/Solver/Vector Field 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Minimum View Factor/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Calculate Stresses/1</key>
             <value>1</value>
          </widget>
-         <widget type="Label">
-            <key>/Free Surface/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Save Geometry Ids/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Eigen System Values/1</key>
+            <value>10</value>
          </widget>
          <widget type="CheckBox">
-            <key>/MgDyn2DPost/Solver/Discontinuous Galerkin/10</key>
+            <key>/MgDynPost/Solver/Calculate Maxwell Stress/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn2DPost/Solver/Calculate/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/SST K-Omega/Solver/Procedure/10</key>
-            <value>"SSTKOmega" "SSTKOmega"</value>
-         </widget>
-         <widget type="TextEdit">
-            <key>/Nonlinear elasticity/Solver/Free text/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Flux and Gradient/Solver/Procedure/10</key>
-            <value>"FluxSolver" "FluxSolver"</value>
-         </widget>
-         <widget type="Label">
-            <key>/Mesh Update/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Result Output/Solver/Single Precision/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Helmholtz Equation/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Combo">
-            <key>/Linear elasticity/Solver/Eigen System Select/10</key>
-            <value>Smallest magnitude</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/MgDyn/Solver/Use Tree Gauge/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDyn2DHarmonic/Solver/Procedure/10</key>
-            <value>"MagnetoDynamics2D" "MagnetoDynamics2DHarmonic"</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Navier-Stokes/Solver/Calculate Loads/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/K-Epsilon/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="Label">
-            <key>/MgDynPost/Solver/Specify fields to compute/10</key>
-            <value>Specify fields to compute</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/Heat Equation/Solver/Update View Factors/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Label">
-            <key>/Vector Helmholtz Post Process/Solver//10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/Solver/Exported Variable 3/10</key>
+            <key>/SaveScalars/Solver/Variable 1/1</key>
             <value></value>
          </widget>
          <widget type="CheckBox">
-            <key>/Nonlinear elasticity/Solver/Calculate Loads/10</key>
+            <key>/Result Output/Solver/Discontinuous Bodies/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn2DPost/Solver/Calculate Joule Heating/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/Result Output/Solver/Vector Field 1/10</key>
+            <key>/SaveScalars/Solver/Variable 5/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Heat Equation/Solver/Exported Variable 3/10</key>
+            <key>/Helmholtz Equation/Solver/Exported Variable 4/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Linear elasticity/Solver/Exported Variable 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/K-Epsilon/Solver/Exported Variable 5/10</key>
+            <key>/Flux and Gradient/Solver/Target Variable/1</key>
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Heat Equation/Solver/Free text input/10</key>
+            <key>/Navier-Stokes/Solver/Free text input/1</key>
             <value>Free text input</value>
          </widget>
-         <widget type="Edit">
-            <key>/Nonlinear elasticity/Solver/Variable/10</key>
-            <value>Displacement(cdim)</value>
-         </widget>
          <widget type="CheckBox">
-            <key>/Poisson-Boltzmann equation/Solver/Calculate Electric Charge/10</key>
+            <key>/Heat Equation/Solver/Update Gebhardt Factors/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/SaveScalars/Solver/Variable 3/10</key>
+            <key>/MgDynPost/Solver/Procedure/1</key>
+            <value>"MagnetoDynamics" "MagnetoDynamicsCalcFields"</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn/Solver/Fix Input Current Density/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveLine/Solver/Comment/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Model Lumping/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Variable 3/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Heat Equation/Solver/Variable/10</key>
-            <value>Temperature</value>
+            <key>/SST K-Omega/Solver/Exported Variable 4/1</key>
+            <value></value>
          </widget>
          <widget type="Edit">
-            <key>/MgDynPost/Solver/Potential Variable/10</key>
+            <key>/Helmholtz Equation/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveScalars/Solver/Parallel Reduce/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDynPost/Solver/Potential Variable/1</key>
             <value>AV</value>
          </widget>
          <widget type="CheckBox">
-            <key>/Heat Equation/Solver/Gebhardt Factors Solver Iterative/10</key>
+            <key>/Elastic Plates/Solver/Geometric Stiffness/1</key>
             <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Elastic Plates/Solver/Exported Variable 1/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Linear elasticity/Solver/Eigen system solution/10</key>
-            <value>Eigen system solution</value>
-         </widget>
-         <widget type="Label">
-            <key>/Elastic Plates/Solver/Additional Variables/10</key>
-            <value>Additional Variables</value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/Solver/Filename Numbering/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/SaveScalars/Solver/Filename/10</key>
-            <value></value>
-         </widget>
-         <widget type="Label">
-            <key>/Navier-Stokes/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
          </widget>
          <widget type="TextEdit">
-            <key>/Mesh Update/Solver/Free text/10</key>
+            <key>/Heat Equation/Solver/Free text/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Heat Equation/Solver/Procedure/10</key>
-            <value>"HeatSolve" "HeatSolver"</value>
+            <key>/Richards Equation/Solver/Variable/1</key>
+            <value>Total Head</value>
          </widget>
          <widget type="Edit">
-            <key>/SaveScalars/Solver/Coefficient 2/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Output File Name/10</key>
-            <value>case</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Free Surface/Solver/Exported Variable 3/10</key>
+            <key>/SST K-Omega/Solver/Exported Variable 2/1</key>
             <value></value>
          </widget>
          <widget type="Label">
-            <key>/Free Surface/Solver/Miscellaneous options/10</key>
-            <value>Miscellaneous options</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Model PDE/Solver/Procedure/10</key>
-            <value>"ModelPDE" "AdvDiffSolver"</value>
+            <key>/MgDyn2DPost/Solver/Magnetic flux computation/1</key>
+            <value>Magnetic flux computation</value>
          </widget>
          <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Calculate Maxwell Stress/10</key>
-            <value>0</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Vector Helmholtz Post Process/Solver/Procedure/10</key>
-            <value>"VectorHelmholtz" "VectorHelmholtzCalcFields"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/MgDynPost/Solver/Procedure/10</key>
-            <value>"MagnetoDynamics" "MagnetoDynamicsCalcFields"</value>
-         </widget>
-         <widget type="Edit">
-            <key>/Result Output/Solver/Scalar Field 4/10</key>
-            <value></value>
-         </widget>
-         <widget type="CheckBox">
-            <key>/SaveScalars/Solver/No Matrix Equation/10</key>
+            <key>/Nonlinear elasticity/Solver/Displace mesh/1</key>
             <value>1</value>
          </widget>
          <widget type="CheckBox">
-            <key>/MgDyn2DPost/Solver/Calculate/10</key>
+            <key>/Heat Equation/Solver/Matrix Topology Fixed/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Reynolds Equation/Solver/Variable/1</key>
+            <value>FilmPressure</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Save Nodal Fields/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="Label">
+            <key>/Mesh Update/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Viewfactor number of rays/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDynPost/Solver/Calculate Current Density/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Eigen System Values/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Reynolds Equation/Solver/Procedure/1</key>
+            <value>"ReynoldsSolver" "ReynoldsSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Exported Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDynPost/Solver/Specify fields to compute/1</key>
+            <value>Specify fields to compute</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/View Factors Geometry Tolerance/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Mesh Update/Solver/Exported Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Poisson-Boltzmann equation/Solver/Variable/1</key>
+            <value>Potential</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Electrostatics/Solver/Procedure/1</key>
+            <value>"StatElecSolve" "StatElecSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Exported Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Mesh Update/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Static Current Conduction/Solver/Power Control/1</key>
+            <value></value>
+         </widget>
+         <widget type="Combo">
+            <key>/Result Output/Solver/Output Format/1</key>
+            <value>Vtu</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Heat Equation/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Vector Helmholtz Equation/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Mesh Update/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Fix Displacements/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Free Surface/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDynPost/Solver/Calculate Nodal Forces/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveLine/Solver/Flux Variable/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Elastic Plates/Solver/Eigen system solution/1</key>
+            <value>Eigen system solution</value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Reynolds Equation/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Geometric Stiffness/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/K-Epsilon/Solver/Procedure/1</key>
+            <value>"KESolver" "KESolver"</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveScalars/Solver/Save Flux/1</key>
             <value>0</value>
          </widget>
          <widget type="Label">
-            <key>/Linear elasticity/Solver/Free text input/10</key>
+            <key>/Vector Helmholtz Equation/Solver/Free text input/1</key>
             <value>Free text input</value>
          </widget>
          <widget type="Edit">
-            <key>/Navier-Stokes/Solver/Exported Variable 4/10</key>
+            <key>/Flux and Gradient/Solver/Procedure/1</key>
+            <value>"FluxSolver" "FluxSolver"</value>
+         </widget>
+         <widget type="Label">
+            <key>/SST K-Omega/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDynPost/Solver/MagnetoDynamics field computation/1</key>
+            <value>MagnetoDynamics field computation</value>
+         </widget>
+         <widget type="Label">
+            <key>/Linear elasticity/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn/Solver/Use Tree Gauge/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Poisson-Boltzmann equation/Solver/Calculate Electric Charge/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Electrostatics/Solver/Calculate Electric Flux/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Heat Equation/Solver/Gebhardt Factors Solver Iterative/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Static Current Conduction/Solver/Variable/1</key>
+            <value>Potential</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn2DPost/Solver/Vector Potential/1</key>
+            <value>Vector Potential</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Nonlinear elasticity/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Stability Analysis/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Coefficient 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Heat Equation/Solver/Gebhardt Factors Solver Full/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Flux and Gradient/Solver/Enforce Positive Magnitude/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Nonlinear elasticity/Solver/Exported Variable 5/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Vector Helmholtz Equation/Solver/Variable/10</key>
-            <value>E[E re:1 E im:1]</value>
+            <key>/SaveScalars/Solver/Coefficient 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Helmholtz Equation/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Nonlinear elasticity/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn/Solver/Variable/1</key>
+            <value>AV</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn/Solver/Variable for vector (and scalar) potential/1</key>
+            <value>Variable for vector (and scalar) potential</value>
+         </widget>
+         <widget type="Combo">
+            <key>/Linear elasticity/Solver/Eigen System Select/1</key>
+            <value>Smallest magnitude</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Heat Equation/Solver/Update View Factors/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Exported Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Vector Helmholtz Equation/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="Combo">
+            <key>/SaveScalars/Solver/Operator 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Free Surface/Solver/Apply Limits/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Label">
+            <key>/Linear elasticity/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Richards Equation/Solver/Active Coordinate/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2D/Solver/Procedure/1</key>
+            <value>"MagnetoDynamics2D" "MagnetoDynamics2D"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Divergence/Solver/Target Variable/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn2DPost/Solver/Average Within Materials/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Flux Coefficient/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Comment/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDynPost/Solver/Discontinuous Galerkin/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Combo">
+            <key>/SaveScalars/Solver/Operator 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Solver/Procedure/1</key>
+            <value>"FlowSolve" "FlowSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Model Lumping Filename/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Single Precision/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Navier-Stokes/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Mesh Update/Solver/Variable/1</key>
+            <value>Mesh Update(cdim)</value>
+         </widget>
+         <widget type="Label">
+            <key>/Linear elasticity/Solver/More Options/1</key>
+            <value>More Options</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Procedure/1</key>
+            <value>"StressSolve" "StressSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Divergence/Solver/Procedure/1</key>
+            <value>"DivergenceSolver" "DivergenceSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Free Surface/Solver/Variable/1</key>
+            <value>FreeSurface</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Helmholtz Equation/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Post Process/Solver/Field Variable/1</key>
+            <value>E</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Result Output/Solver/Scalar Field 6/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Result Output/Solver/Vector Fields/1</key>
+            <value>Vector Fields</value>
+         </widget>
+         <widget type="Combo">
+            <key>/SaveScalars/Solver/Operator 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Elastic Plates/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveScalars/Solver/Show Norm/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Binary Output/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDynPost/Solver/Skip Nodal Fields/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Solver/Exported Variable 1/1</key>
+            <value></value>
          </widget>
          <widget type="TextEdit">
-            <key>/K-Epsilon/Solver/Free text/10</key>
+            <key>/Helmholtz Equation/Solver/Free text/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/Helmholtz Equation/Solver/Exported Variable 1/10</key>
+            <key>/Result Output/Solver/Scalar Field 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/Solver/Procedure/1</key>
+            <value>"VectorHelmholtz" "VectorHelmholtzSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/K-Epsilon/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Static Current Conduction/Solver/Current Control/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Result Output/Solver/Scalar Field 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/K-Epsilon/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Heat Equation/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Free Surface/Solver/Exported Variable 1/1</key>
+            <value>FreeSurface Residual</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vorticity/Solver/Vorticity Coefficient/1</key>
             <value></value>
          </widget>
          <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Calculate Electric Field/10</key>
+            <key>/Result Output/Solver/Discontinuous Galerkin/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Combo">
+            <key>/Elastic Plates/Solver/Eigen System Select/1</key>
+            <value>Smallest magnitude</value>
+         </widget>
+         <widget type="Edit">
+            <key>/K-Epsilon/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Heat Equation/Solver/Radiation Factor computation/1</key>
+            <value>Radiation Factor computation</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn2DPost/Solver/Target Variable Complex/1</key>
             <value>0</value>
          </widget>
          <widget type="Edit">
-            <key>/SaveLine/Solver/Polyline Divisions/10</key>
+            <key>/Result Output/Solver/Procedure/1</key>
+            <value>"ResultOutputSolve" "ResultOutputSolver"</value>
+         </widget>
+         <widget type="Label">
+            <key>/Helmholtz Equation/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="Label">
+            <key>/Elastic Plates/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/Solver/Linear System Preconditioning Damp Coefficient im/1</key>
+            <value>1.0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vorticity/Solver/Procedure/1</key>
+            <value>"VorticitySolver" "VorticitySolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Free Surface/Solver/Exported Variable 5/1</key>
             <value></value>
          </widget>
          <widget type="Edit">
-            <key>/MgDyn/Solver/Procedure/10</key>
+            <key>/SaveScalars/Solver/Flux Variable/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Vector Helmholtz Post Process/Solver//1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Variable/1</key>
+            <value>Displacement(cdim)</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveLine/Solver/Polyline Divisions/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDynPost/Solver/Calculate Joule Heating/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Free Surface/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Static Current Conduction/Solver/Calculate Volume Current/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DPost/Solver/Procedure/1</key>
+            <value>"MagnetoDynamics2D" "BSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Frequency/1</key>
+            <value></value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Linear elasticity/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Heat Equation/Solver/Parameters for 2- and 3D viewfactor computation/1</key>
+            <value>Parameters for 2- and 3D viewfactor computation</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Save Coordinates/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn2DPost/Solver/Loss Estimation/1</key>
+            <value>Loss Estimation</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Variable/1</key>
+            <value>Temperature</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn/Solver/Procedure/1</key>
             <value>"MagnetoDynamics" "WhitneyAVSolver"</value>
          </widget>
-         <widget type="CheckBox">
-            <key>/Poisson-Boltzmann equation/Solver/Calculate Electric Field/10</key>
-            <value>0</value>
-         </widget>
          <widget type="Edit">
-            <key>/Heat Equation/Solver/Minimum View Factor/10</key>
-            <value></value>
-         </widget>
-         <widget type="Edit">
-            <key>/Electrostatics/Solver/Capacitance Matrix Filename/10</key>
+            <key>/Result Output/Solver/Vector Field 3/1</key>
             <value></value>
          </widget>
          <widget type="CheckBox">
-            <key>/MgDynPost/Solver/Calculate Magnetic Field Strength/10</key>
+            <key>/Flux and Gradient/Solver/Calculate Flux/1</key>
             <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Eigen System Shift/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Richards Equation/Solver/Saturated Initial Guess/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Electrostatics/Solver/Calculate Capacitance Matrix/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Elastic Plates/Solver/Eigen System Damped/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Electrostatics/Solver/Capacitance Bodies/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveLine/Solver/File Append/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Minimum Gebhardt Factor/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Advection Diffusion Equation/Solver/Variable/1</key>
+            <value>Concentration</value>
+         </widget>
+         <widget type="Label">
+            <key>/Linear elasticity/Solver/Model Lumping definitions/1</key>
+            <value>Model Lumping definitions</value>
+         </widget>
+         <widget type="Label">
+            <key>/Mesh Update/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Post Process/Solver/Calculate Energy Functional/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Flux and Gradient/Solver/Calculate Flux Magnitude/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Nonlinear elasticity/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDynPost/Solver/Specify what kind of fields to compute/1</key>
+            <value>Specify what kind of fields to compute</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Result Output/Solver/Vector Field 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/SST K-Omega/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Helmholtz Equation/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Post Process/Solver/Procedure/1</key>
+            <value>"VectorHelmholtz" "VectorHelmholtzCalcFields"</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveLine/Solver/Save Axis/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Nonlinear elasticity/Solver/Variable/1</key>
+            <value>Displacement(cdim)</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SST K-Omega/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Mesh Update/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Helmholtz Equation/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Result Output/Solver/Scalar Fields/1</key>
+            <value>Scalar Fields</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DHarmonic/Solver/Variable/1</key>
+            <value>Potential[Potential Re:1 Potential Im:1]</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Richards Equation/Solver/Procedure/1</key>
+            <value>"RichardsSolver" "RichardsSolver"</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Post Process/Solver/Calculate Magnetic Flux/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/SST K-Omega/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Helmholtz Equation/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Free Surface/Solver/Procedure/1</key>
+            <value>"FreeSurfaceSolver" "FreeSurfaceSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Implicit Gebhardt Factor Fraction/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Electrostatics/Solver/Calculate Electric Energy/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Eigen System Compute Residuals/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Displace mesh/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Save Boundaries Only/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Helmholtz Equation/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Advection Diffusion Equation/Solver/Procedure/1</key>
+            <value>"AdvectionDiffusion" "AdvectionDiffusionSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Mesh Update/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Linear elasticity/Solver/Harmonic system solution/1</key>
+            <value>Harmonic system solution</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn2DPost/Solver/Joule heat computation/1</key>
+            <value>Joule heat computation</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Nonlinear elasticity/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Reynolds Equation/Solver/Apply Limiter/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Linear elasticity/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Mesh Update/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Post Process/Solver/Calculate Magnetic Field Strength/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Nonlinear elasticity/Solver/Procedure/1</key>
+            <value>"ElasticSolve" "ElasticSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveLine/Solver/Polyline Coordinates/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Electrostatics/Solver/Constant Weights/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Mesh Update/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Reynolds Equation/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Poisson-Boltzmann equation/Solver/Procedure/1</key>
+            <value>"PoissonBoltzmannSolve" "PoissonBoltzmannSolve"</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDynPost/Solver/Target Variable/1</key>
+            <value>Target Variable</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Vector Helmholtz Equation/Solver/Linear System Preconditioning Damp Coefficient/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Linear elasticity/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Model PDE/Solver/Procedure/1</key>
+            <value>"ModelPDE" "AdvDiffSolver"</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveLine/Solver/Filename Numbering/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DPost/Solver/Fourier Loss Field Exponent/1</key>
+            <value></value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Navier-Stokes/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Eigen Analysis/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Eigen System Damped/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Procedure/1</key>
+            <value>"Smitc" "SmitcSolver"</value>
+         </widget>
+         <widget type="Label">
+            <key>/Mesh Update/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Static Current Conduction/Solver/Constant Weights/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Coefficient 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DPost/Solver/Fourier Loss Frequency Exponent/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Heat Equation/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SST K-Omega/Solver/Procedure/1</key>
+            <value>"SSTKOmega" "SSTKOmega"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Show Norm Index/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/No Matrix Equation/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Exported Variable 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Coefficient 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Navier-Stokes/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Eigen System Shift/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2D/Solver/Variable/1</key>
+            <value>Potential</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Nonlinear elasticity/Solver/Exported Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Poisson-Boltzmann equation/Solver/Constant Weights/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Post Process/Solver/Calculate Poynting Vector/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveScalars/Solver/No Matrix Equation/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Electrostatics/Solver/Capacitance Matrix Filename/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Electrostatics/Solver/Calculate Electric Field/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Nonlinear elasticity/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DPost/Solver/Target Variable/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Exported Variable 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Helmholtz Equation/Solver/Variable/1</key>
+            <value>Pressure Wave(2)</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Coefficient 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Free Surface/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Label">
+            <key>/Heat Equation/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/SST K-Omega/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Static Current Conduction/Solver/Procedure/1</key>
+            <value>"StatCurrentSolve" "StatCurrentSolver"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Exported Variable 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Elastic Plates/Solver/Variable/1</key>
+            <value>Deflection(3)</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Equation/Solver/Calculate Loads/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Elastic Plates/Solver/Eigen System Compute Residuals/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Eigen Analysis/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/Result Output/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Save Points/1</key>
+            <value></value>
+         </widget>
+         <widget type="Combo">
+            <key>/SaveScalars/Solver/Operator 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Linear elasticity/Solver/Harmonic Analysis/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Combo">
+            <key>/SaveScalars/Solver/Operator 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Viewfactor factor tolerance/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Static Current Conduction/Solver/Calculate Joule Heating/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="TextEdit">
+            <key>/K-Epsilon/Solver/Free text/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/Result Output/Solver/Scalar Field 5/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Result Output/Solver/Free text input/1</key>
+            <value>Free text input</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDynPost/Solver/Calculate Magnetic Field Strength/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Post Process/Solver/Calculate Electric Field/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveScalars/Solver/Procedure/1</key>
+            <value>"SaveData" "SaveScalars"</value>
+         </widget>
+         <widget type="Label">
+            <key>/Free Surface/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Solver/Variable/1</key>
+            <value>Flow Solution[Velocity:cdim Pressure:1]</value>
+         </widget>
+         <widget type="Label">
+            <key>/Nonlinear elasticity/Solver/Miscellaneous options/1</key>
+            <value>Miscellaneous options</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Result Output/Solver/Scalar Field 3/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/MgDyn2DPost/Solver/Discontinuous Galerkin/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Save Linear Elements/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Post Process/Solver/Calculate Div Poynting Vector/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/K-Epsilon/Solver/Exported Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vorticity/Solver/Constant Bulk Matrix/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Label">
+            <key>/Navier-Stokes/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="Edit">
+            <key>/MgDyn2DHarmonic/Solver/Procedure/1</key>
+            <value>"MagnetoDynamics2D" "MagnetoDynamics2DHarmonic"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Result Output/Solver/Scalar Field 1/1</key>
+            <value></value>
+         </widget>
+         <widget type="Edit">
+            <key>/K-Epsilon/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Result Output/Solver/Save Elemental Fields/1</key>
+            <value>1</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Solver/Exported Variable 2/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Vector Helmholtz Equation/Solver/Use Piola Transform/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Label">
+            <key>/MgDyn/Solver/A-V formulation solver/1</key>
+            <value>A-V formulation solver</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/Viewfactor area tolerance/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Linear elasticity/Solver/Eigen system solution/1</key>
+            <value>Eigen system solution</value>
+         </widget>
+         <widget type="Edit">
+            <key>/SaveLine/Solver/Procedure/1</key>
+            <value>"SaveData" "SaveLine"</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Navier-Stokes/Solver/Exported Variable 4/1</key>
+            <value></value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Elastic Plates/Solver/Eigen Analysis/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Divergence/Solver/Constant Bulk Matrix/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveScalars/Solver/Exact Coordinates/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/SaveScalars/Solver/Filename Numbering/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Heat Equation/Solver/View Factors Fixed After Iterations/1</key>
+            <value></value>
+         </widget>
+         <widget type="Label">
+            <key>/Nonlinear elasticity/Solver/Additional Variables/1</key>
+            <value>Additional Variables</value>
+         </widget>
+         <widget type="CheckBox">
+            <key>/Nonlinear elasticity/Solver/Elasticity Solver Linear/1</key>
+            <value>0</value>
+         </widget>
+         <widget type="Edit">
+            <key>/Free Surface/Solver/Exported Variable 4/1</key>
+            <value></value>
          </widget>
       </item>
    </solverspecificoptions>
@@ -5386,7 +5041,7 @@
          </widget>
          <widget type="ComboBox">
             <objectName>initialConditionCombo</objectName>
-            <currentIndex>1</currentIndex>
+            <currentIndex>0</currentIndex>
          </widget>
       </item>
    </bodyproperties>

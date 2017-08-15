@@ -2,7 +2,7 @@ Header
   CHECK KEYWORDS Warn
   Mesh DB "." "."
   Include Path ""
-  Results Directory "CASE1"
+  Results Directory "CASE4"     ! Change from CASE2
 End
 
 Simulation
@@ -16,8 +16,8 @@ Simulation
   BDF Order = 1
   Timestep intervals = 100
   Timestep Sizes = 0.001
-  Solver Input File = case1.sif
-  Post File = case1.vtu
+  Solver Input File = case4.sif     ! Change from case2.sif
+  Post File = case4.vtu     ! Change from case2.vtu
 Coordinate Scaling = 0.001
 End
 
@@ -64,6 +64,9 @@ Solver 1
   Linear System Abort Not Converged = False
   Linear System Residual Output = 1
   Linear System Precondition Recompute = 1
+
+  ! Harmonic Response
+  !Harmonic Analysis = True
 End
 
 Equation 1
@@ -76,7 +79,16 @@ Material 1
   Name = "Bronze"
   Poisson ratio = 0.34
   Youngs modulus = 1.2236595E+10
-  Porosity Model = Always saturated
+
+  ! Damping Coefficient (for Over-Damped Case)
+  ! Damping = 1e7     
+
+  ! Rayleigh Damping (Type keywords(Logical,Real) must exist)
+  Rayleigh Damping = Logical True
+  Rayleigh alpha = Real 0.3
+  Rayleigh beta = Real 0.3
+
+  !Porosity Model = Always saturated     ! Not used
   Density = 8800
 End
 

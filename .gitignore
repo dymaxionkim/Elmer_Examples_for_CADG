@@ -1,4 +1,9 @@
 *.vtu
 *.pvtu
+*.ogv
+*.avi
+*.jpg
+*.jpeg
+*.png
 netgen.prof
 

@@ -2,7 +2,7 @@ Header
   CHECK KEYWORDS Warn
   Mesh DB "." "."
   Include Path ""
-  Results Directory "CASE1"
+  Results Directory "CASE2"     ! Change from CASE1
 End
 
 Simulation
@@ -16,8 +16,8 @@ Simulation
   BDF Order = 1
   Timestep intervals = 100
   Timestep Sizes = 0.001
-  Solver Input File = case1.sif
-  Post File = case1.vtu
+  Solver Input File = case2.sif     ! Change from case1.sif
+  Post File = case2.vtu     ! Change from case1.vtu
 Coordinate Scaling = 0.001
 End
 
@@ -76,6 +76,7 @@ Material 1
   Name = "Bronze"
   Poisson ratio = 0.34
   Youngs modulus = 1.2236595E+10
+  Damping = 1e7     ! Damping Coefficient (for Over-Damped Case)
   Porosity Model = Always saturated
   Density = 8800
 End

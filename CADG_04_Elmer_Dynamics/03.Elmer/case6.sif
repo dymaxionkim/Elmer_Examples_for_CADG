@@ -2,22 +2,22 @@ Header
   CHECK KEYWORDS Warn
   Mesh DB "." "."
   Include Path ""
-  Results Directory "CASE1"
+  Results Directory "CASE6"     ! Change from CASE2
 End
 
 Simulation
   Max Output Level = 5
   Coordinate System = Cartesian
   Coordinate Mapping(3) = 1 2 3
-  Simulation Type = Transient
+  Simulation Type = Transient     ! Transient for Harmonic Response
   Steady State Max Iterations = 1
   Output Intervals = 1
   Timestepping Method = BDF
   BDF Order = 1
   Timestep intervals = 100
   Timestep Sizes = 0.001
-  Solver Input File = case1.sif
-  Post File = case1.vtu
+  Solver Input File = case6.sif     ! Change from case2.sif
+  Post File = case6.vtu     ! Change from case2.vtu
 Coordinate Scaling = 0.001
 End
 
@@ -64,6 +64,10 @@ Solver 1
   Linear System Abort Not Converged = False
   Linear System Residual Output = 1
   Linear System Precondition Recompute = 1
+
+  ! Harmonic Response
+  Harmonic Analysis = True
+  Frequency = 50    ! Vibration Frequency [Hz]
 End
 
 Equation 1
@@ -76,24 +80,38 @@ Material 1
   Name = "Bronze"
   Poisson ratio = 0.34
   Youngs modulus = 1.2236595E+10
-  Porosity Model = Always saturated
+
+  ! Damping Coefficient (for Over-Damped Case)
+  ! Damping = 1e7     
+
+  ! Rayleigh Damping (Type keywords(Logical,Real) must exist)
+  !Rayleigh Damping = Logical True
+  !Rayleigh alpha = Real 0.3
+  !Rayleigh beta = Real 0.3
+
+  !Porosity Model = Always saturated     ! Not used
   Density = 8800
 End
 
 Body Force 1
-  Name = "Gravitation"
-  Stress Bodyforce 3 = $(-9.81*8800)
+  Name = "Gravitation_and_Vibration"
+  Stress Bodyforce 1 = Real 1          ! Vibration Magnitude (Real Part)
+  Stress Bodyforce 1 im = Real 0.0     ! Vibration Geometry (Imagin Part)
+  Stress Bodyforce 3 = $(-9.81*8800)   ! Gravity
 End
 
+! Inintial Condition (Start from zero position)
 Initial Condition 1
   Name = "InitialCondition 1"
-  Displacement 1 = -0.005
+  Displacement 1 = 0
+  Displacement 2 = 0
+  Displacement 3 = 0
 End
 
 Boundary Condition 1
   Target Boundaries(1) = 5 
   Name = "Fix"
-  Displacement 3 = 0
   Displacement 1 = 0
   Displacement 2 = 0
+  Displacement 3 = 0
 End
