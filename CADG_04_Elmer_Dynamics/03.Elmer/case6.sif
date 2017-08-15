@@ -9,13 +9,13 @@ Simulation
   Max Output Level = 5
   Coordinate System = Cartesian
   Coordinate Mapping(3) = 1 2 3
-  Simulation Type = Transient     ! Transient for Harmonic Response
+  Simulation Type = Steady state     ! Steady state for Harmonic Response
   Steady State Max Iterations = 1
   Output Intervals = 1
   Timestepping Method = BDF
   BDF Order = 1
-  Timestep intervals = 100
-  Timestep Sizes = 0.001
+  !Timestep intervals = 100
+  !Timestep Sizes = 0.001
   Solver Input File = case6.sif     ! Change from case2.sif
   Post File = case6.vtu     ! Change from case2.vtu
 Coordinate Scaling = 0.001
@@ -67,7 +67,7 @@ Solver 1
 
   ! Harmonic Response
   Harmonic Analysis = True
-  Frequency = 50    ! Vibration Frequency [Hz]
+  Frequency = 50 100 150 200    ! Vibration Frequency [Hz]
 End
 
 Equation 1
@@ -98,14 +98,6 @@ Body Force 1
   Stress Bodyforce 1 = Real 1          ! Vibration Magnitude (Real Part)
   Stress Bodyforce 1 im = Real 0.0     ! Vibration Geometry (Imagin Part)
   Stress Bodyforce 3 = $(-9.81*8800)   ! Gravity
-End
-
-! Inintial Condition (Start from zero position)
-Initial Condition 1
-  Name = "InitialCondition 1"
-  Displacement 1 = 0
-  Displacement 2 = 0
-  Displacement 3 = 0
 End
 
 Boundary Condition 1

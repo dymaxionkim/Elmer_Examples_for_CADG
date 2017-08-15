@@ -100,14 +100,6 @@ Body Force 1
   Stress Bodyforce 3 = $(-9.81*8800)   ! Gravity
 End
 
-! Inintial Condition (Start from zero position)
-Initial Condition 1
-  Name = "InitialCondition 1"
-  Displacement 1 = 0
-  Displacement 2 = 0
-  Displacement 3 = 0
-End
-
 Boundary Condition 1
   Target Boundaries(1) = 5 
   Name = "Fix"
