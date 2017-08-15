@@ -67,7 +67,7 @@ Solver 1
 
   ! Harmonic Response
   Harmonic Analysis = True
-  Frequency = 50 100 150 200    ! Vibration Frequency [Hz]
+  Frequency = 130    ! Vibration Frequency [Hz]
 End
 
 Equation 1
