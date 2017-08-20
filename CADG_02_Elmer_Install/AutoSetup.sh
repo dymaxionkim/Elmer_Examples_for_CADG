@@ -229,5 +229,8 @@ echo 'LANG="ko_KR.UTF-8"' > /etc/default/locale
 # Timezone
 ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
+# Pulseaudio for Firefox 52 Sound
+apt install pulseaudio pavucontrol
+
 # Fin
 echo 'Finished!'
