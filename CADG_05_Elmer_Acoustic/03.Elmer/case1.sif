@@ -1,0 +1,178 @@
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "." "."
+  Include Path ""
+  Results Directory "Result"
+End
+
+Simulation
+  Max Output Level = 5
+  Coordinate System = Cartesian
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Steady state
+  Steady State Max Iterations = 1
+  Output Intervals = 1
+  Timestepping Method = BDF
+  BDF Order = 1
+  Solver Input File = case1.sif
+End
+
+Constants
+  Gravity(4) = 0 -1 0 9.82
+  Stefan Boltzmann = 5.67e-08
+  Permittivity of Vacuum = 8.8542e-12
+  Boltzmann Constant = 1.3807e-23
+  Unit Charge = 1.602e-19
+$f = 100
+End
+
+Body 1
+  Target Bodies(1) = 19
+  Name = "Body Property 1"
+  Equation = 2
+  Material = 2
+End
+
+Body 2
+  Target Bodies(1) = 20
+  Name = "Body 2"
+  Equation = 1
+  Material = 1
+  Body Force = 1
+End
+
+Solver 2
+  Equation = Linear elasticity
+  Procedure = "StressSolve" "StressSolver"
+  Variable = -dofs 3 Displacement
+  Frequency = $f
+  Harmonic Analysis = True
+  Exec Solver = Always
+  Stabilize = True
+  Bubbles = False
+  Lumped Mass Matrix = False
+  Optimize Bandwidth = True
+  Steady State Convergence Tolerance = 1.0e-5
+  Nonlinear System Convergence Tolerance = 1.0e-7
+  Nonlinear System Max Iterations = 20
+  Nonlinear System Newton After Iterations = 3
+  Nonlinear System Newton After Tolerance = 1.0e-3
+  Nonlinear System Relaxation Factor = 1
+  Linear System Solver = Direct
+  Linear System Direct Method = Umfpack
+End
+
+Solver 3
+  Equation = Helmholtz Equation
+  Variable = -dofs 2 Pressure Wave
+Displacement Variable EigenMode = Integer 1
+Frequency = $f
+Nonlinear Update Exported Variables = Logical True
+  Procedure = "HelmholtzSolve" "HelmholtzSolver"
+  Exec Solver = Always
+  Stabilize = True
+  Bubbles = False
+  Lumped Mass Matrix = False
+  Optimize Bandwidth = True
+  Steady State Convergence Tolerance = 1.0e-5
+  Nonlinear System Convergence Tolerance = 1.0e-7
+  Nonlinear System Max Iterations = 20
+  Nonlinear System Newton After Iterations = 3
+  Nonlinear System Newton After Tolerance = 1.0e-3
+  Nonlinear System Relaxation Factor = 1
+  Linear System Solver = Iterative
+  Linear System Iterative Method = BiCGStab
+  Linear System Max Iterations = 500
+  Linear System Convergence Tolerance = 1.0e-10
+  BiCGstabl polynomial degree = 2
+  Linear System Preconditioning = Diagonal
+  Linear System ILUT Tolerance = 1.0e-3
+  Linear System Abort Not Converged = False
+  Linear System Residual Output = 1
+  Linear System Precondition Recompute = 1
+End
+
+Solver 1
+  Equation = Result Output
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output Format = Vtu
+  Single Precision = True
+  Output File Name = case1
+  Exec Solver = After Simulation
+End
+
+Equation 1
+  Name = "Bell"
+  Calculate Stresses = True
+  Active Solvers(1) = 2
+End
+
+Equation 2
+  Name = "Air"
+  Active Solvers(1) = 3
+End
+
+Equation 3
+  Name = "Result"
+  Active Solvers(1) = 1
+End
+
+Material 1
+  Name = "Bronze"
+  Poisson ratio = 0.34
+  Youngs modulus = 1.2236595E+10
+  Sound speed = 5000
+  Porosity Model = Always saturated
+  Density = 8800
+End
+
+Material 2
+  Name = "Air"
+  Relative Permeability = 1.00000037
+  Heat Conductivity = 0.0257
+  Heat Capacity = 1005.0
+  Relative Permittivity = 1.00059
+  Relative Permeability = 1.00000037
+  Viscosity = 1.983e-5
+  Viscosity = 1.983e-5
+  Sound speed = 343.0
+  Heat expansion Coefficient = 3.43e-3
+  Relative Permittivity = 1.00059
+  Porosity Model = Always saturated
+  Relative Permittivity = 1.00059
+  Relative Permittivity = 1.00059
+  Density = 1.205
+  Relative Permeability = 1.00000037
+End
+
+Body Force 1
+  Name = "Vibration_Force"
+  Stress Bodyforce 1 = 1e2
+Stress Bodyforce 1 im = Real 0.0
+End
+
+Boundary Condition 1
+  Target Boundaries(1) = 12 
+  Name = "floor"
+  Wave impedance 1 = 0
+End
+
+Boundary Condition 2
+  Target Boundaries(1) = 11 
+  Name = "open"
+  Wave impedance 1 = 343
+End
+
+Boundary Condition 3
+  Target Boundaries(1) = 13 
+  Name = "fix"
+  Displacement 3 = 0
+  Displacement 1 = 0
+  Displacement 2 = 0
+End
+
+Boundary Condition 4
+  Target Boundaries(5) = 17 18 14 15 16 
+  Name = "interface"
+Structure Interface = Logical True
+End
