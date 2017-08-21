@@ -1,5 +1,7 @@
 *.unv
+*.log
 *.vtu
+*.pvsm
 *.pvtu
 *.ogv
 *.avi
