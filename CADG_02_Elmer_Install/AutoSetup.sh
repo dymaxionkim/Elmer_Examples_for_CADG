@@ -232,5 +232,9 @@ ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 # Pulseaudio for Firefox 52 Sound
 apt install pulseaudio pavucontrol
 
+# Script to Capture Window
+cp ./CaptureWindow.sh /home/osboxes/CaptureWindow.sh
+chmod +x /home/osboxes/CaptureWindow.sh
+
 # Fin
 echo 'Finished!'
