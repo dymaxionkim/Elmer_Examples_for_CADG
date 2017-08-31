@@ -3,6 +3,7 @@
 *.vtu
 *.pvsm
 *.pvtu
+*.ep
 *.ogv
 *.avi
 *.jpg
