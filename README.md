@@ -20,6 +20,7 @@ __Elmer FEM Examples for CAD&Graphics__
 * 가급적 속도가 좋은 인터넷에 연결되어 있을 것. (많은 다운로드가 있기 때문)
 * PC의 CPU는 가급적 4스레드 이상 지원할 것. (계산작업시 멀티코어 연산이 유리함)
 * PC의 메모리는 8GB 이상일 것. (가상머신에 최소한 4GB 이상 할당하는 것이 좋음)
+* PC에서 가상머신을 위해 80~100GB 정도의 하드디스크 여유 용량을 마련해 둔다.
 
 ### (3) 버츄얼박스(VirtualBox) 및 루분투(Lubuntu)설치
 * [버츄얼박스 홈페이지](https://www.virtualbox.org/wiki/Downloads)로 가서 최신버전의 'Windows hosts' 바이너리설치파일을 다운로드 받아, 실행시켜 설치한다.
