@@ -77,12 +77,6 @@ im-config -n nimf
 # nimf-settings
 
 
-# Nimf, Evince 충돌문제 해결
-# https://github.com/cogniti/nimf/issues/1
-mv /etc/apparmor.d/usr.bin.evince /etc/apparmor.d/usr.bin.evince.bak
-cp /home/osboxes/github/Elmer_Examples_for_CADG/CADG_02_Elmer_Install/usr.bin.evince /etc/apparmor.d/usr.bin.evince
-
-
 # Python pip
 #apt -y install python-pip
 #pip install --upgrade pip
@@ -203,10 +197,6 @@ echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
 ## Desktop Environment
 
-# lxterminal.conf
-mv /home/osboxes/.config/lxterminal/lxterminal.conf /home/osboxes/.config/lxterminal/lxterminal.conf.bak
-cp ./lxterminal.conf /home/osboxes/.config/lxterminal/lxterminal.conf
-
 # GTK-3.0
 mv /home/osboxes/.config/gtk-3.0/settings.ini /home/osboxes/.config/gtk-3.0/settings.ini.bak
 cp ./settings.ini /home/osboxes/.config/gtk-3.0/settings.ini
@@ -235,6 +225,10 @@ apt install pulseaudio pavucontrol
 # Script to Capture Window
 cp ./CaptureWindow.sh /home/osboxes/CaptureWindow.sh
 chmod +x /home/osboxes/CaptureWindow.sh
+
+# ETC (Change some apps for better usability)
+apt -y install terminator shutter okular
+apt -y remove --purge leafpad abiword gnumeric pidgin sylpheed bluez lxterminal xpad mtpaint evince
 
 # Fin
 echo 'Finished!'
