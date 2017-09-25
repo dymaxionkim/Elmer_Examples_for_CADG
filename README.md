@@ -8,7 +8,7 @@ __Elmer FEM Examples for CAD&Graphics__
 
 * 2017년도 CAD&Graphics 연재 기고문에 필요한 보조 자료 모음.
 * "엘머로 해 보는 오픈소스 엔지니어링"
-* [파일 다운로드](https://github.com/dymaxionkim/Elmer_Examples_for_CADG)
+* [파일 다운로드(zip)](https://github.com/dymaxionkim/Elmer_Examples_for_CADG/archive/master.zip)
 
 
 ## 2. 설치(Installation)
