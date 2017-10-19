@@ -150,7 +150,7 @@ echo 'Categories=Education;' >> /usr/share/applications/Gmsh.desktop
 
 
 # Paraview
-wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.4&type=binary&os=linux64&downloadFile=ParaView-5.4.1-RC3-Qt5-OpenGL2-MPI-Linux-64bit.tar.gz"
+wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.4&type=binary&os=Linux&downloadFile=ParaView-5.4.1-Qt5-OpenGL2-MPI-Linux-64bit.tar.gz"
 tar -xvzf Paraview.tar.gz
 mv ./ParaView-* /home/osboxes/Paraview
 rm Paraview.tar.gz

@@ -78,4 +78,6 @@ htop
 https://github.com/dymaxionkim/Elmer_Examples_for_CADG/issues
 ```
 
+* 본 설치과정의 동영상 : [https://youtu.be/hq0EYFjVuk4](https://youtu.be/hq0EYFjVuk4)
+
 ### 감사합니다!
