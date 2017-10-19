@@ -228,7 +228,7 @@ chmod +x /home/osboxes/CaptureWindow.sh
 
 # ETC (Change some apps for better usability)
 apt -y install terminator shutter okular
-apt -y remove --purge leafpad abiword gnumeric pidgin sylpheed bluez lxterminal xpad mtpaint evince
+apt -y remove --purge leafpad abiword gnumeric pidgin sylpheed bluez lxterminal xpad mtpaint evince xfburn guvcview
 
 # Fin
 echo 'Finished!'
