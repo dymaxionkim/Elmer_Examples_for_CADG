@@ -220,7 +220,7 @@ echo 'LANG="ko_KR.UTF-8"' > /etc/default/locale
 ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 # Pulseaudio for Firefox 52 Sound
-apt install pulseaudio pavucontrol
+apt -y install pulseaudio pavucontrol
 
 # Script to Capture Window
 cp ./CaptureWindow.sh /home/osboxes/CaptureWindow.sh
