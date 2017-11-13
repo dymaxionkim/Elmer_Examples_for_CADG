@@ -1,0 +1,19 @@
+#!/bin/bash
+###########################################################
+# STEP2UNV for Elmer with Salome
+# Import, Grouping and Meshing for a STEP File
+# 2017.09.12
+# by Dymaxion.kim@gmail.com
+###########################################################
+
+StartTime=$(date +%s)
+
+salome -t ~/.config/salome/step2unv/step2unv.py
+salome killall
+
+EndTime=$(date +%s)
+echo "It takes $(($EndTime - $StartTime)) seconds to complete this task."
+
+exit 0
+
+
