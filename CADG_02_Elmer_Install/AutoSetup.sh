@@ -18,7 +18,7 @@ add-apt-repository -y ppa:freecad-maintainers/freecad-stable
 apt-add-repository -y ppa:hodong/nimf
 apt-add-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
 add-apt-repository -y ppa:octave/stable
-add-apt-repository ppa:mozillateam/firefox-next
+add-apt-repository -y ppa:mozillateam/firefox-next
 
 
 # Distro Update
