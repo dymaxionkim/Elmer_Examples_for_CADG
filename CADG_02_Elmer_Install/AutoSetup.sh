@@ -173,7 +173,7 @@ echo 'Categories=Education;' >> /usr/share/applications/Paraview.desktop
 
 
 # Salome
-wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=UB16.04&version=8.2.0"
+wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=UB16.04&version=8.3.0"
 tar -xvzf Salome.tgz
 mv ./SALOME-* /home/osboxes/Salome
 rm Salome.tgz
