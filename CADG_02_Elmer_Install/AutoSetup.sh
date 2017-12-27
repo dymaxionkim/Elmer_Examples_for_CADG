@@ -129,7 +129,7 @@ echo 'Categories=Education;' >> /usr/share/applications/ElmerGUI.desktop
 
 
 # Gmsh
-wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-3.0.4-Linux64.tgz"
+wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-3.0.6-Linux64.tgz"
 tar -xvzf Gmsh.tgz
 mv ./gmsh* /home/osboxes/Gmsh
 rm Gmsh.tgz
