@@ -73,7 +73,7 @@ cp ./drawing.tcl /usr/share/netgen/drawing.tcl
 
 
 # Nimf
-apt -y install nimf im-config
+apt -y install nimf nimf-libhangul im-config
 im-config -n nimf
 # nimf-settings
 
