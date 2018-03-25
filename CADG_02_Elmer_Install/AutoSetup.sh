@@ -1,7 +1,7 @@
 #!/bin/bash
 ###########################################################
 # Engineering Ubuntu Workstation on Lubuntu osboxes
-# 2017.08.15
+# 2018.03.25
 # by Dymaxion.kim@gmail.com
 ###########################################################
 
@@ -15,7 +15,6 @@ add-apt-repository -y ppa:jonathonf/ffmpeg-3
 add-apt-repository -y ppa:openshot.developers/ppa
 add-apt-repository -y ppa:webupd8team/atom
 add-apt-repository -y ppa:freecad-maintainers/freecad-stable
-apt-add-repository -y ppa:hodong/nimf
 apt-add-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
 add-apt-repository -y ppa:octave/stable
 add-apt-repository -y ppa:mozillateam/firefox-next
@@ -72,10 +71,9 @@ mv /usr/share/netgen/drawing.tcl /usr/share/netgen/drawing.tcl.bak
 cp ./drawing.tcl /usr/share/netgen/drawing.tcl
 
 
-# Nimf
-apt -y install nimf nimf-libhangul im-config
-im-config -n nimf
-# nimf-settings
+# uim-byeoru
+apt -y install uim uim-byeoru im-config
+im-config -n uim
 
 
 # Python pip
