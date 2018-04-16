@@ -1,0 +1,268 @@
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "." "."
+  Include Path ""
+  Results Directory "case02"
+End
+
+Simulation
+  Max Output Level = 5
+  Coordinate System = Cartesian
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Transient
+  Steady State Max Iterations = 1
+  Output Intervals = 1
+  Timestepping Method = BDF
+  BDF Order = 1
+  Timestep intervals = 600
+  Timestep Sizes = 0.05
+  Solver Input File = case02.sif
+End
+
+Constants
+  Gravity(4) = 0 -1 0 9.82
+  Stefan Boltzmann = 5.67e-08
+  Permittivity of Vacuum = 8.8542e-12
+  Boltzmann Constant = 1.3807e-23
+  Unit Charge = 1.602e-19
+End
+
+Body 1
+  Target Bodies(1) = 10
+  Name = "AIR"
+  Equation = 1
+  Material = 1
+  Body Force = 1
+  Initial condition = 1
+End
+
+Body 2
+  Target Bodies(1) = 11
+  Name = "HEATSINK"
+  Equation = 2
+  Material = 2
+  Initial condition = 2
+End
+
+Body 3
+  Target Bodies(1) = 12
+  Name = "CHIP"
+  Equation = 2
+  Material = 3
+  Initial condition = 2
+End
+
+Body 4
+  Target Bodies(1) = 13
+  Name = "PCB"
+  Equation = 2
+  Material = 4
+  Initial condition = 2
+End
+
+Solver 3
+  Equation = Heat Equation
+  Variable = Temperature
+  Procedure = "HeatSolve" "HeatSolver"
+  Exec Solver = Always
+  Stabilize = True
+  Bubbles = False
+  Lumped Mass Matrix = False
+  Optimize Bandwidth = True
+  Steady State Convergence Tolerance = 1.0e-5
+  Nonlinear System Convergence Tolerance = 1.0e-7
+  Nonlinear System Max Iterations = 20
+  Nonlinear System Newton After Iterations = 3
+  Nonlinear System Newton After Tolerance = 1.0e-3
+  Nonlinear System Relaxation Factor = 1
+  Linear System Solver = Iterative
+  Linear System Iterative Method = BiCGStab
+  Linear System Max Iterations = 500
+  Linear System Convergence Tolerance = 1.0e-10
+  BiCGstabl polynomial degree = 2
+  Linear System Preconditioning = Diagonal
+  Linear System ILUT Tolerance = 1.0e-3
+  Linear System Abort Not Converged = False
+  Linear System Residual Output = 1
+  Linear System Precondition Recompute = 1
+End
+
+Solver 2
+  Equation = Navier-Stokes
+  Variable = Flow Solution[Velocity:2 Pressure:1]
+  Procedure = "FlowSolve" "FlowSolver"
+  Exec Solver = Always
+  Stabilize = True
+  Bubbles = False
+  Lumped Mass Matrix = False
+  Optimize Bandwidth = True
+  Steady State Convergence Tolerance = 1.0e-5
+  Nonlinear System Convergence Tolerance = 1.0e-7
+  Nonlinear System Max Iterations = 20
+  Nonlinear System Newton After Iterations = 3
+  Nonlinear System Newton After Tolerance = 1.0e-3
+  Nonlinear System Relaxation Factor = 1
+  Linear System Solver = Iterative
+  Linear System Iterative Method = BiCGStab
+  Linear System Max Iterations = 500
+  Linear System Convergence Tolerance = 1.0e-5
+  BiCGstabl polynomial degree = 2
+  Linear System Preconditioning = Diagonal
+  Linear System ILUT Tolerance = 1.0e-3
+  Linear System Abort Not Converged = False
+  Linear System Residual Output = 1
+  Linear System Precondition Recompute = 1
+End
+
+Solver 1
+  Equation = Result Output
+  Output File Name = case
+  Output Format = Vtu
+  Single Precision = True
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Exec Solver = After Timestep
+End
+
+Equation 1
+  Name = "AIR"
+  Active Solvers(3) = 3 2 1
+End
+
+Equation 2
+  Name = "SOLID"
+  Active Solvers(2) = 3 1
+End
+
+Material 1
+  Name = "Air (room temperature)"
+  Relative Permeability = 1.00000037
+  Heat Conductivity = 0.0257
+  Heat Capacity = 1005.0
+  Relative Permittivity = 1.00059
+  Relative Permeability = 1.00000037
+  Viscosity = 1.983e-5
+  Viscosity = 1.983e-5
+  Sound speed = 343.0
+  Heat expansion Coefficient = 3.43e-3
+  Relative Permittivity = 1.00059
+  Porosity Model = Always saturated
+  Relative Permittivity = 1.00059
+  Relative Permittivity = 1.00059
+  Reference Temperature = 25
+  Density = 1.205
+  Relative Permeability = 1.00000037
+End
+
+Material 2
+  Name = "Aluminium (generic)"
+  Electric Conductivity = 37.73e6
+  Relative Permeability = 1.000022
+  Youngs modulus = 70.0e9
+  Heat Conductivity = 237.0
+  Electric Conductivity = 37.73e6
+  Electric Conductivity = 37.73e6
+  Poisson ratio = 0.35
+  Youngs modulus = 70.0e9
+  Heat Capacity = 897.0
+  Youngs modulus = 70.0e9
+  Relative Permeability = 1.000022
+  Sound speed = 5000.0
+  Poisson ratio = 0.35
+  Heat expansion Coefficient = 23.1e-6
+  Poisson ratio = 0.35
+  Porosity Model = Always saturated
+  Mesh Poisson ratio = 0.35
+  Electric Conductivity = 37.73e6
+  Density = 2700.0
+  Relative Permeability = 1.000022
+End
+
+Material 3
+  Name = "Fused Silica (25 C)"
+  Youngs modulus = 72.0e9
+  Heat Conductivity = 1.46
+  Poisson ratio = 0.17
+  Youngs modulus = 72.0e9
+  Heat Capacity = 670.0
+  Youngs modulus = 72.0e9
+  Relative Permittivity = 3.75
+  Sound speed = 5900.0
+  Poisson ratio = 0.17
+  Heat expansion Coefficient = 5.4e-7
+  Relative Permittivity = 3.75
+  Poisson ratio = 0.17
+  Porosity Model = Always saturated
+  Relative Permittivity = 3.75
+  Relative Permittivity = 3.75
+  Mesh Poisson ratio = 0.17
+  Density = 2200.0
+End
+
+Material 4
+  Name = "Polycarbonate (generic)"
+  Youngs modulus = 2.2e9
+  Heat Conductivity = 0.205
+  Poisson ratio = 0.37
+  Youngs modulus = 2.2e9
+  Heat Capacity = 1250.0
+  Youngs modulus = 2.2e9
+  Poisson ratio = 0.37
+  Heat expansion Coefficient = 67.0e-6
+  Poisson ratio = 0.37
+  Porosity Model = Always saturated
+  Mesh Poisson ratio = 0.37
+  Density = 1220.0
+End
+
+Body Force 1
+  Name = "BUOYANCY"
+  Boussinesq = True
+End
+
+Initial Condition 1
+  Name = "AIR"
+  Velocity 2 = 0
+  Velocity 1 = -0.001
+  Temperature = 25
+End
+
+Initial Condition 2
+  Name = "SOLID"
+  Temperature = 25
+End
+
+Boundary Condition 1
+  Target Boundaries(1) = 1 
+  Name = "BOT"
+  Heat Transfer Coefficient = 250
+  External Temperature = 25
+  Noslip wall BC = True
+End
+
+Boundary Condition 2
+  Target Boundaries(1) = 2 
+  Name = "TOP"
+  Heat Transfer Coefficient = 250
+  External Temperature = 25
+  Noslip wall BC = True
+End
+
+Boundary Condition 3
+  Target Boundaries(1) = 4 
+  Name = "LEFT"
+  Velocity 1 = 0.01
+  Temperature = 25
+End
+
+Boundary Condition 4
+  Target Boundaries(1) = 6 
+  Name = "HEATSOURCE"
+  Heat Flux = 1000
+End
+
+Boundary Condition 5
+  Target Boundaries(1) = 3 
+  Name = "RIGHT"
+  External Pressure = 0
+  Temperature = 25
+End
