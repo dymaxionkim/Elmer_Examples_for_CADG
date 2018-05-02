@@ -2,7 +2,7 @@ Header
   CHECK KEYWORDS Warn
   Mesh DB "." "."
   Include Path ""
-  Results Directory "case02"
+  Results Directory "case06"
 End
 
 Simulation
@@ -11,12 +11,12 @@ Simulation
   Coordinate Mapping(3) = 1 2 3
   Simulation Type = Transient
   Steady State Max Iterations = 1
-  Output Intervals = 1
+  Output Intervals = 5
   Timestepping Method = BDF
   BDF Order = 1
-  Timestep intervals = 600
-  Timestep Sizes = 0.01
-  Solver Input File = case02.sif
+  Timestep intervals = 6000
+  Timestep Sizes = 0.002
+  Solver Input File = case06.sif
 End
 
 Constants
@@ -25,7 +25,7 @@ Constants
   Permittivity of Vacuum = 8.8542e-12
   Boltzmann Constant = 1.3807e-23
   Unit Charge = 1.602e-19
-$SPEED = 0.0 ![m/s] Flow Speed
+$SPEED = 0.05 ![m/s] Flow Speed
 $HEAT = 1000 ![W/m^2] Heat Flux
 $HTC = 250 ![W/m^2] Heat Transfer Coefficient
 $AMBIENT = 25 ![C] External Temperature
@@ -183,7 +183,6 @@ Material 1
   Viscosity = 1.983e-5
   Viscosity = 1.983e-5
   Sound speed = 343.0
-  Heat Conductivity Model = Turbulent
   Heat expansion Coefficient = 3.43e-3
   Relative Permittivity = 1.00059
   Porosity Model = Always saturated
@@ -277,7 +276,7 @@ Initial Condition 2
 End
 
 Boundary Condition 1
-  Target Boundaries(1) = 2
+  Target Boundaries(1) = 2 
   Name = "TOP"
   Heat Transfer Coefficient = $HTC
   Wall Law = True
@@ -287,7 +286,7 @@ Boundary Condition 1
 End
 
 Boundary Condition 2
-  Target Boundaries(1) = 1
+  Target Boundaries(1) = 1 
   Name = "BOT"
   Heat Transfer Coefficient = $HTC
   Radiation = Idealized
@@ -298,27 +297,25 @@ Boundary Condition 2
 End
 
 Boundary Condition 3
-  Target Boundaries(1) = 4
+  Target Boundaries(1) = 4 
   Name = "LEFT"
+  Kinetic Dissipation = $KDR
   Heat Transfer Coefficient = $HTC
-  Wall Law = True
-  Boundary Layer Thickness = $BLT
+  Velocity 1 = $SPEED
+  Kinetic Energy = $KE
   External Temperature = $AMBIENT
-  Noslip wall BC = True
 End
 
 Boundary Condition 4
-  Target Boundaries(1) = 3
+  Target Boundaries(1) = 3 
   Name = "RIGHT"
   Heat Transfer Coefficient = $HTC
-  Wall Law = True
-  Boundary Layer Thickness = $BLT
+  External Pressure = 0
   External Temperature = $AMBIENT
-  Noslip wall BC = True
 End
 
 Boundary Condition 5
-  Target Boundaries(3) = 5 8 9
+  Target Boundaries(3) = 5 8 9 
   Name = "HEATSINK"
   Heat Transfer Coefficient = $HTC
   Wall Law = True
@@ -328,7 +325,7 @@ Boundary Condition 5
 End
 
 Boundary Condition 6
-  Target Boundaries(1) = 7
+  Target Boundaries(1) = 7 
   Name = "HEATSOURCE"
   Heat Flux = $HEAT
   Heat Transfer Coefficient = $HTC

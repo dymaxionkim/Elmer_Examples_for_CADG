@@ -21,7 +21,7 @@
       </widget>
       <widget type="LineEdit">
          <objectName>resultsDirectoryEdit</objectName>
-         <text>case01</text>
+         <text>case05</text>
       </widget>
       <widget type="LineEdit">
          <objectName>steadyStateMaxIterEdit</objectName>
@@ -37,15 +37,15 @@
       </widget>
       <widget type="LineEdit">
          <objectName>outputIntervalsEdit</objectName>
-         <text>1</text>
+         <text>5</text>
       </widget>
       <widget type="LineEdit">
          <objectName>timestepSizesEdit</objectName>
-         <text>0.01</text>
+         <text>0.002</text>
       </widget>
       <widget type="LineEdit">
          <objectName>solverInputFileEdit</objectName>
-         <text>case01.sif</text>
+         <text>case05.sif</text>
       </widget>
       <widget type="LineEdit">
          <objectName>postFileEdit</objectName>
@@ -81,11 +81,16 @@
       </widget>
       <widget type="TextEdit">
          <objectName>constantsFreeTextEdit</objectName>
-         <text>$SPEED = 0.0 ![m/s] Flow Speed
+         <text>$SPEED = 0.05 ![m/s] Flow Speed
 $HEAT = 1000 ![W/m^2] Heat Flux
 $HTC = 250 ![W/m^2] Heat Transfer Coefficient
 $AMBIENT = 25 ![C] External Temperature
-</text>
+! k-epsilon model
+$BLT = 0.008 !Boundary Layer Thickness
+$KE = 0.003 !Kinetic Energy
+$KDR = 0.0001 !Kinetic Dissipation Rate
+$KEclip = 0.000006 ! KE Clip of Material
+$KEcmu = 0.09 ! KE Cmu of Material</text>
       </widget>
       <widget type="ComboBox">
          <objectName>maxOutputLevelCombo</objectName>
@@ -235,6 +240,18 @@ $AMBIENT = 25 ![C] External Temperature
             <isChecked>0</isChecked>
          </widget>
          <widget type="CheckBox">
+            <objectName>useHypre</objectName>
+            <isChecked>0</isChecked>
+         </widget>
+         <widget type="CheckBox">
+            <objectName>useParasails</objectName>
+            <isChecked>0</isChecked>
+         </widget>
+         <widget type="CheckBox">
+            <objectName>useBoomerAMG</objectName>
+            <isChecked>0</isChecked>
+         </widget>
+         <widget type="CheckBox">
             <objectName>stabilizeCheck</objectName>
             <isChecked>1</isChecked>
          </widget>
@@ -252,18 +269,6 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="CheckBox">
             <objectName>linearSystemAbortWhenNotConvergedCheck</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="CheckBox">
-            <objectName>useHypre</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="CheckBox">
-            <objectName>useParasails</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="CheckBox">
-            <objectName>useBoomerAMG</objectName>
             <isChecked>0</isChecked>
          </widget>
          <widget type="LineEdit">
@@ -315,6 +320,30 @@ $AMBIENT = 25 ![C] External Temperature
             <text>2</text>
          </widget>
          <widget type="LineEdit">
+            <objectName>thresholdEdit</objectName>
+            <text>-0.8</text>
+         </widget>
+         <widget type="LineEdit">
+            <objectName>filterEdit</objectName>
+            <text>-0.8</text>
+         </widget>
+         <widget type="LineEdit">
+            <objectName>maxLevelEdit</objectName>
+            <text>1</text>
+         </widget>
+         <widget type="LineEdit">
+            <objectName>symmetryEdit</objectName>
+            <text>0</text>
+         </widget>
+         <widget type="LineEdit">
+            <objectName>boomerMaxLevels</objectName>
+            <text>25</text>
+         </widget>
+         <widget type="LineEdit">
+            <objectName>boomerSweeps</objectName>
+            <text>1</text>
+         </widget>
+         <widget type="LineEdit">
             <objectName>nonlinSystemConvergenceToleranceEdit</objectName>
             <text>1.0e-7</text>
          </widget>
@@ -362,29 +391,25 @@ $AMBIENT = 25 ![C] External Temperature
             <objectName>linearSystemBiCGstablPolDeg</objectName>
             <text>2</text>
          </widget>
-         <widget type="LineEdit">
-            <objectName>thresholdEdit</objectName>
-            <text>-0.8</text>
+         <widget type="ComboBox">
+            <objectName>boomerCycle</objectName>
+            <currentIndex>1</currentIndex>
          </widget>
-         <widget type="LineEdit">
-            <objectName>filterEdit</objectName>
-            <text>-0.8</text>
+         <widget type="ComboBox">
+            <objectName>boomerCoarsening</objectName>
+            <currentIndex>6</currentIndex>
          </widget>
-         <widget type="LineEdit">
-            <objectName>maxLevelEdit</objectName>
-            <text>1</text>
+         <widget type="ComboBox">
+            <objectName>boomerRelaxation</objectName>
+            <currentIndex>3</currentIndex>
          </widget>
-         <widget type="LineEdit">
-            <objectName>symmetryEdit</objectName>
-            <text>0</text>
+         <widget type="ComboBox">
+            <objectName>boomerInterpolation</objectName>
+            <currentIndex>0</currentIndex>
          </widget>
-         <widget type="LineEdit">
-            <objectName>boomerMaxLevels</objectName>
-            <text>25</text>
-         </widget>
-         <widget type="LineEdit">
-            <objectName>boomerSweeps</objectName>
-            <text>1</text>
+         <widget type="ComboBox">
+            <objectName>boomerSmoother</objectName>
+            <currentIndex>6</currentIndex>
          </widget>
          <widget type="ComboBox">
             <objectName>nonlinSystemConvergenceMeasureCombo</objectName>
@@ -410,40 +435,8 @@ $AMBIENT = 25 ![C] External Temperature
             <objectName>linearSystemPreconditioning</objectName>
             <currentIndex>0</currentIndex>
          </widget>
-         <widget type="ComboBox">
-            <objectName>boomerCycle</objectName>
-            <currentIndex>1</currentIndex>
-         </widget>
-         <widget type="ComboBox">
-            <objectName>boomerCoarsening</objectName>
-            <currentIndex>6</currentIndex>
-         </widget>
-         <widget type="ComboBox">
-            <objectName>boomerRelaxation</objectName>
-            <currentIndex>3</currentIndex>
-         </widget>
-         <widget type="ComboBox">
-            <objectName>boomerInterpolation</objectName>
-            <currentIndex>0</currentIndex>
-         </widget>
-         <widget type="ComboBox">
-            <objectName>boomerSmoother</objectName>
-            <currentIndex>6</currentIndex>
-         </widget>
       </item>
       <item index="3" name="Result Output">
-         <widget type="RadioButton">
-            <objectName>linearSystemSolverIterative</objectName>
-            <isChecked>1</isChecked>
-         </widget>
-         <widget type="RadioButton">
-            <objectName>linearSystemSolverDirect</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="RadioButton">
-            <objectName>linearSystemSolverMultigrid</objectName>
-            <isChecked>0</isChecked>
-         </widget>
          <widget type="RadioButton">
             <objectName>execAlways</objectName>
             <isChecked>0</isChecked>
@@ -466,6 +459,18 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="RadioButton">
             <objectName>execNever</objectName>
+            <isChecked>0</isChecked>
+         </widget>
+         <widget type="RadioButton">
+            <objectName>linearSystemSolverIterative</objectName>
+            <isChecked>1</isChecked>
+         </widget>
+         <widget type="RadioButton">
+            <objectName>linearSystemSolverDirect</objectName>
+            <isChecked>0</isChecked>
+         </widget>
+         <widget type="RadioButton">
+            <objectName>linearSystemSolverMultigrid</objectName>
             <isChecked>0</isChecked>
          </widget>
          <widget type="CheckBox">
@@ -501,10 +506,6 @@ $AMBIENT = 25 ![C] External Temperature
             <isChecked>0</isChecked>
          </widget>
          <widget type="CheckBox">
-            <objectName>linearSystemAbortWhenNotConvergedCheck</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="CheckBox">
             <objectName>stabilizeCheck</objectName>
             <isChecked>1</isChecked>
          </widget>
@@ -519,6 +520,10 @@ $AMBIENT = 25 ![C] External Temperature
          <widget type="CheckBox">
             <objectName>optimizeBandwidthCheck</objectName>
             <isChecked>1</isChecked>
+         </widget>
+         <widget type="CheckBox">
+            <objectName>linearSystemAbortWhenNotConvergedCheck</objectName>
+            <isChecked>0</isChecked>
          </widget>
          <widget type="LineEdit">
             <objectName>mgLevelsEdit</objectName>
@@ -687,18 +692,6 @@ $AMBIENT = 25 ![C] External Temperature
       </item>
       <item index="17" name="K-Epsilon">
          <widget type="RadioButton">
-            <objectName>linearSystemSolverIterative</objectName>
-            <isChecked>1</isChecked>
-         </widget>
-         <widget type="RadioButton">
-            <objectName>linearSystemSolverDirect</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="RadioButton">
-            <objectName>linearSystemSolverMultigrid</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="RadioButton">
             <objectName>execAlways</objectName>
             <isChecked>1</isChecked>
          </widget>
@@ -720,6 +713,18 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="RadioButton">
             <objectName>execNever</objectName>
+            <isChecked>0</isChecked>
+         </widget>
+         <widget type="RadioButton">
+            <objectName>linearSystemSolverIterative</objectName>
+            <isChecked>1</isChecked>
+         </widget>
+         <widget type="RadioButton">
+            <objectName>linearSystemSolverDirect</objectName>
+            <isChecked>0</isChecked>
+         </widget>
+         <widget type="RadioButton">
+            <objectName>linearSystemSolverMultigrid</objectName>
             <isChecked>0</isChecked>
          </widget>
          <widget type="CheckBox">
@@ -755,10 +760,6 @@ $AMBIENT = 25 ![C] External Temperature
             <isChecked>0</isChecked>
          </widget>
          <widget type="CheckBox">
-            <objectName>linearSystemAbortWhenNotConvergedCheck</objectName>
-            <isChecked>0</isChecked>
-         </widget>
-         <widget type="CheckBox">
             <objectName>stabilizeCheck</objectName>
             <isChecked>1</isChecked>
          </widget>
@@ -773,6 +774,10 @@ $AMBIENT = 25 ![C] External Temperature
          <widget type="CheckBox">
             <objectName>optimizeBandwidthCheck</objectName>
             <isChecked>1</isChecked>
+         </widget>
+         <widget type="CheckBox">
+            <objectName>linearSystemAbortWhenNotConvergedCheck</objectName>
+            <isChecked>0</isChecked>
          </widget>
          <widget type="LineEdit">
             <objectName>mgLevelsEdit</objectName>
@@ -867,6 +872,10 @@ $AMBIENT = 25 ![C] External Temperature
             <text>1.0e-3</text>
          </widget>
          <widget type="LineEdit">
+            <objectName>steadyStateConvergenceToleranceEdit</objectName>
+            <text>1.0e-5</text>
+         </widget>
+         <widget type="LineEdit">
             <objectName>linearSystemMaxIterationsEdit</objectName>
             <text>500</text>
          </widget>
@@ -889,10 +898,6 @@ $AMBIENT = 25 ![C] External Temperature
          <widget type="LineEdit">
             <objectName>linearSystemBiCGstablPolDeg</objectName>
             <text>2</text>
-         </widget>
-         <widget type="LineEdit">
-            <objectName>steadyStateConvergenceToleranceEdit</objectName>
-            <text>1.0e-5</text>
          </widget>
          <widget type="ComboBox">
             <objectName>boomerCycle</objectName>
@@ -919,6 +924,10 @@ $AMBIENT = 25 ![C] External Temperature
             <currentIndex>0</currentIndex>
          </widget>
          <widget type="ComboBox">
+            <objectName>steadyStateConvergenceMeasureCombo</objectName>
+            <currentIndex>0</currentIndex>
+         </widget>
+         <widget type="ComboBox">
             <objectName>linearSystemMultigridMethod</objectName>
             <currentIndex>0</currentIndex>
          </widget>
@@ -932,10 +941,6 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="ComboBox">
             <objectName>linearSystemPreconditioning</objectName>
-            <currentIndex>0</currentIndex>
-         </widget>
-         <widget type="ComboBox">
-            <objectName>steadyStateConvergenceMeasureCombo</objectName>
             <currentIndex>0</currentIndex>
          </widget>
       </item>
@@ -1101,10 +1106,6 @@ $AMBIENT = 25 ![C] External Temperature
             <text>1</text>
          </widget>
          <widget type="LineEdit">
-            <objectName>steadyStateConvergenceToleranceEdit</objectName>
-            <text>1.0e-5</text>
-         </widget>
-         <widget type="LineEdit">
             <objectName>nonlinSystemConvergenceToleranceEdit</objectName>
             <text>1.0e-7</text>
          </widget>
@@ -1123,6 +1124,10 @@ $AMBIENT = 25 ![C] External Temperature
          <widget type="LineEdit">
             <objectName>nonlinSystemNewtonAfterTolEdit</objectName>
             <text>1.0e-3</text>
+         </widget>
+         <widget type="LineEdit">
+            <objectName>steadyStateConvergenceToleranceEdit</objectName>
+            <text>1.0e-5</text>
          </widget>
          <widget type="LineEdit">
             <objectName>linearSystemMaxIterationsEdit</objectName>
@@ -1169,11 +1174,11 @@ $AMBIENT = 25 ![C] External Temperature
             <currentIndex>6</currentIndex>
          </widget>
          <widget type="ComboBox">
-            <objectName>steadyStateConvergenceMeasureCombo</objectName>
+            <objectName>nonlinSystemConvergenceMeasureCombo</objectName>
             <currentIndex>0</currentIndex>
          </widget>
          <widget type="ComboBox">
-            <objectName>nonlinSystemConvergenceMeasureCombo</objectName>
+            <objectName>steadyStateConvergenceMeasureCombo</objectName>
             <currentIndex>0</currentIndex>
          </widget>
          <widget type="ComboBox">
@@ -1748,7 +1753,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="CheckBox">
             <key>/K-Epsilon/Equation/Active/0</key>
-            <value>0</value>
+            <value>1</value>
          </widget>
          <widget type="Edit">
             <key>/Advection Diffusion Equation/Equation/Priority/0</key>
@@ -2878,7 +2883,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Combo">
             <key>/Navier-Stokes/Material/Viscosity Model/0</key>
-            <value>None</value>
+            <value>K-Epsilon</value>
          </widget>
          <widget type="Edit">
             <key>/MgDyn2D/Material/Electric Conductivity/0</key>
@@ -3102,7 +3107,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/Material/KE Clip/0</key>
-            <value></value>
+            <value>$KEclip</value>
          </widget>
          <widget type="Edit">
             <key>/Poisson-Boltzmann equation/Material/Poisson Boltzmann Beta/0</key>
@@ -3178,7 +3183,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/Material/Yasuda Coefficient/0</key>
-            <value></value>
+            <value>2</value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/Material/Properties/0</key>
@@ -3338,7 +3343,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Combo">
             <key>/Heat Equation/Material/Heat Conductivity Model/0</key>
-            <value>None</value>
+            <value>Turbulent</value>
          </widget>
          <widget type="Edit">
             <key>/Reynolds Equation/Material/Flow Admittance/0</key>
@@ -3546,7 +3551,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/Material/KE Cmu/0</key>
-            <value></value>
+            <value>$KEcmu</value>
          </widget>
          <widget type="Edit">
             <key>/Reynolds Equation/Material/Bulk Modulus/0</key>
@@ -3874,7 +3879,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/Material/Yasuda Coefficient/1</key>
-            <value></value>
+            <value>2</value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/Material/Properties/1</key>
@@ -3918,7 +3923,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/Material/Turbulent Prandtl Number/1</key>
-            <value></value>
+            <value>0.85</value>
          </widget>
          <widget type="Edit">
             <key>/SST K-Omega/Material/Dissipation Buoancy Coefficient/1</key>
@@ -4566,7 +4571,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/Material/Yasuda Coefficient/2</key>
-            <value></value>
+            <value>2</value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/Material/Properties/2</key>
@@ -4610,7 +4615,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/Material/Turbulent Prandtl Number/2</key>
-            <value></value>
+            <value>0.85</value>
          </widget>
          <widget type="Edit">
             <key>/SST K-Omega/Material/Dissipation Buoancy Coefficient/2</key>
@@ -5262,7 +5267,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/Material/Yasuda Coefficient/3</key>
-            <value></value>
+            <value>2</value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/Material/Properties/3</key>
@@ -5306,7 +5311,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/Material/Turbulent Prandtl Number/3</key>
-            <value></value>
+            <value>0.85</value>
          </widget>
          <widget type="Edit">
             <key>/SST K-Omega/Material/Dissipation Buoancy Coefficient/3</key>
@@ -6322,7 +6327,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/InitialCondition/Kinetic Energy/0</key>
-            <value></value>
+            <value>$KE</value>
          </widget>
          <widget type="Label">
             <key>/Mesh Update/InitialCondition/...for time dependent simulations.../0</key>
@@ -6482,7 +6487,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/InitialCondition/Kinetic Dissipation/0</key>
-            <value></value>
+            <value>$KDR</value>
          </widget>
          <widget type="Label">
             <key>/Nonlinear elasticity/InitialCondition/...for time dependent simulations.../0</key>
@@ -7464,7 +7469,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="CheckBox">
             <key>/K-Epsilon/BoundaryCondition/Reichardts Wall Law/0</key>
-            <value>0</value>
+            <value>1</value>
          </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/BoundaryCondition/Displacement 1/0</key>
@@ -7772,7 +7777,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/BoundaryCondition/Boundary Layer Thickness/0</key>
-            <value></value>
+            <value>$BLT</value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/BoundaryCondition/Neumann conditions/0</key>
@@ -8616,7 +8621,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="CheckBox">
             <key>/K-Epsilon/BoundaryCondition/Reichardts Wall Law/1</key>
-            <value>0</value>
+            <value>1</value>
          </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/BoundaryCondition/Displacement 1/1</key>
@@ -8924,7 +8929,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/BoundaryCondition/Boundary Layer Thickness/1</key>
-            <value></value>
+            <value>$BLT</value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/BoundaryCondition/Neumann conditions/1</key>
@@ -9228,7 +9233,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/BoundaryCondition/Kinetic Dissipation Rate/2</key>
-            <value></value>
+            <value>$KDR</value>
          </widget>
          <widget type="Edit">
             <key>/MgDyn2DHarmonic/BoundaryCondition/Potential Im/2</key>
@@ -9340,7 +9345,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/BoundaryCondition/Velocity 1/2</key>
-            <value></value>
+            <value>$SPEED</value>
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/BoundaryCondition/External Pressure/2</key>
@@ -9668,7 +9673,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/BoundaryCondition/Kinetic Energy/2</key>
-            <value></value>
+            <value>$KE</value>
          </widget>
          <widget type="Edit">
             <key>/Linear elasticity/BoundaryCondition/Damping coefficient/2</key>
@@ -10340,7 +10345,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="CheckBox">
             <key>/Navier-Stokes/BoundaryCondition/Noslip wall BC/2</key>
-            <value>1</value>
+            <value>0</value>
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/BoundaryCondition/Heat Flux/2</key>
@@ -10508,7 +10513,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/BoundaryCondition/External Pressure/3</key>
-            <value></value>
+            <value>0</value>
          </widget>
          <widget type="Edit">
             <key>/Navier-Stokes/BoundaryCondition/Velocity 1/3</key>
@@ -11508,7 +11513,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="CheckBox">
             <key>/Navier-Stokes/BoundaryCondition/Noslip wall BC/3</key>
-            <value>1</value>
+            <value>0</value>
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/BoundaryCondition/Heat Flux/3</key>
@@ -12092,7 +12097,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="CheckBox">
             <key>/K-Epsilon/BoundaryCondition/Reichardts Wall Law/4</key>
-            <value>0</value>
+            <value>1</value>
          </widget>
          <widget type="Edit">
             <key>/Nonlinear elasticity/BoundaryCondition/Displacement 1/4</key>
@@ -12400,7 +12405,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/K-Epsilon/BoundaryCondition/Boundary Layer Thickness/4</key>
-            <value></value>
+            <value>$BLT</value>
          </widget>
          <widget type="Label">
             <key>/Electrostatics/BoundaryCondition/Neumann conditions/4</key>
@@ -13788,7 +13793,7 @@ $AMBIENT = 25 ![C] External Temperature
          </widget>
          <widget type="Edit">
             <key>/Heat Equation/BoundaryCondition/External Temperature/5</key>
-            <value></value>
+            <value>$AMBIENT</value>
          </widget>
          <widget type="Edit">
             <key>/Elastic Plates/BoundaryCondition/Deflection 2 Condition/5</key>
